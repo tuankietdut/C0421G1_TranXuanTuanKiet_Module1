@@ -13,6 +13,9 @@
         tr {
             height: 30px;
         }
+        th{
+            border: 1px solid;
+        }
         tr:nth-child(odd) {
             background-color: #dddddd;
         }
@@ -26,14 +29,14 @@
 <p>Please take a few moments to complete this satisfaction survey.</p>
 <hr>
 <p>What is your age range?</p>
-<select name="age range" id="" >
+<select name="age range" id=""  style="width: 500px">
     <option value="18-24">18-24</option>
     <option value="25-34">25-34</option>
     <option value="35-50">35-50</option>
     <option value="50">50+</option>
 </select>
 <p>What is your yearly income range?</p>
-<select name="income range" id="">
+<select name="income range" id="" style="width: 500px">
     <option value="">$0 -$25,000</option>
     <option value="">$25,001 -$50,000</option>
     <option value="">$50,001 -$100,000</option>
@@ -59,14 +62,15 @@ $<input type="text" name="dollars" size="8"> .
 <textarea name="want see" id="" cols="80" rows="5"></textarea>
 <p>Please rate your level of agreement with the flowwing statements.</p>
 <table>
-    <th>
-    <td>Strongly Disagree</td>
-    <td>Disagree</td>
-    <td>Agree</td>
-    <td>Strong Agree</td>
-    </th>
     <tr>
-        <td>Our product are priced fairly</td>
+        <th></th>
+        <th style="width: 100px">Strongly Disagree</th>
+        <th style="width: 100px">Disagree</th>
+        <th style="width: 100px">Agree</th>
+        <th style="width: 100px">Strong Agree</th>
+    </tr>
+    <tr style="text-align: center">
+        <td style="text-align: left">Our product are priced fairly</td>
         <td>
             <input type="radio" name="agree"> 1
         </td>
@@ -80,8 +84,8 @@ $<input type="text" name="dollars" size="8"> .
             <input type="radio" name="agree"> 4
         </td>
     </tr>
-    <tr>
-        <td>Our product is high quality.</td>
+    <tr style="text-align: center">
+        <td style="text-align: left">Our product is high quality.</td>
         <td>
             <input type="radio" name="agree 2"> 1
         </td>
@@ -95,8 +99,8 @@ $<input type="text" name="dollars" size="8"> .
             <input type="radio" name="agree 2"> 4
         </td>
     </tr>
-    <tr>
-        <td>You would recommend our product to a friend or <br> coworker.</td>
+    <tr style="text-align: center">
+        <td style="text-align: left">You would recommend our product to a friend or <br> coworker.</td>
         <td>
             <input type="radio" name="agree 3"> 1
         </td>
