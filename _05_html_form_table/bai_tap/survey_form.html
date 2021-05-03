@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table{
+            width: 100%;
+            border: 1px solid ;
+            border-collapse: collapse;
+
+        }
+        tr {
+            height: 30px;
+        }
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
 <h1>Market Research Survey</h1>
@@ -41,7 +58,7 @@ $<input type="text" name="dollars" size="8"> .
 <p>What features would you like to see  in the new product. </p>
 <textarea name="want see" id="" cols="80" rows="5"></textarea>
 <p>Please rate your level of agreement with the flowwing statements.</p>
-<table border="1" style="border: solid">
+<table>
     <th>
     <td>Strongly Disagree</td>
     <td>Disagree</td>
