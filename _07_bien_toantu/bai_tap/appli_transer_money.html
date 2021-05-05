@@ -33,8 +33,10 @@
 
 <script>
     function convert() {
-        var money = document.getElementById("number");
-        document.write("Số tiền "+ money);
+        let money = document.getElementById("number").value;
+        money_Vnd = parseFloat(money);
+        money_Usd = money_Vnd / 22000;
+        alert("Số tiền là: " + money_Usd);
     }
 </script>
 </body>

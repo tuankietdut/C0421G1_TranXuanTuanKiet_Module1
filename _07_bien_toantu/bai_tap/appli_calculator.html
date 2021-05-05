@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="number_one" size="20">
+        <input type="number" id="number_two" size="20">
+    </div>
+    <br>
+    <div>
+        <button onclick="sum();">Addition (+)</button>
+        <button onclick="subtraction();">Subtraction (-)</button>
+        <button onclick="multipli();">Multiplication (X)</button>
+        <button onclick="division();">Division (+)</button>
+    </div>
+    <div>
+        <p id="result" style="font-size: 20px">Kết quả được hiển thị ở đây</p>
+    </div>
+    <script>
+        function sum() {
+            var x = document.getElementById("number_one").value;
+            var y = document.getElementById("number_two").value;
+            var x_one = parseFloat(x);
+            var y_one = parseFloat(y);
+            let z = x_one + y_one;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z);
+            document.getElementById("result").style.backgroundColor="orange";
+        }
+        function subtraction() {
+            var x = document.getElementById("number_one").value;
+            var y = document.getElementById("number_two").value;
+            var x_one = parseFloat(x);
+            var y_one = parseFloat(y);
+            let z_two = x_one - y_one;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            document.getElementById("result").style.backgroundColor="orange";
+        }
+        function multipli() {
+            var x = document.getElementById("number_one").value;
+            var y = document.getElementById("number_two").value;
+            var x_one = parseFloat(x);
+            var y_one = parseFloat(y);
+            let z_two = x_one * y_one;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            document.getElementById("result").style.backgroundColor="orange";
+        }
+        function division() {
+            var x = document.getElementById("number_one").value;
+            var y = document.getElementById("number_two").value;
+            var x_one = parseFloat(x);
+            var y_one = parseFloat(y);
+            let z_two = x_one / y_one;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            document.getElementById("result").style.backgroundColor="orange";
+        }
+    </script>
+</body>
+</html>
