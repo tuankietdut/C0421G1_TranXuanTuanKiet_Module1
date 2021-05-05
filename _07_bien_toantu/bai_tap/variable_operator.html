@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let markVatLy;
+    let markHoaHoc;
+    let markSinhHoc;
+    markVatLy = prompt("Nhập điểm Vật lý: ");
+    markHoaHoc = prompt("Nhập điểm Hóa Học: ");
+    markSinhHoc = prompt("Nhập điểm Sinh Học: ");
+    let vatLy = parseFloat(markVatLy);
+    let hoaHoc = parseFloat(markHoaHoc);
+    let sinhHoc = parseFloat(markSinhHoc);
+    let average = (vatLy + sinhHoc + hoaHoc)/3;
+    document.write("Điểm trung bình là: "+ average);
+</script>
+</body>
+</html>

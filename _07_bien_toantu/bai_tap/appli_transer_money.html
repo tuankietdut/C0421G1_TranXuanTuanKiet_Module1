@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>Form Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="number" placeholder="Nhập số tiền muốn convert"></td>
+            <td>
+                <select name="money_raw" id="money_raw">
+                    <option value="VND">VietNam</option>
+                </select>
+            </td>
+            <td>
+                <select name="money_transfer" id=""money_transfer>
+                    <option value="USA">USA</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="convert();">Convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    function convert() {
+        var money = document.getElementById("number");
+        document.write("Số tiền "+ money);
+    }
+</script>
+</body>
+</html>
