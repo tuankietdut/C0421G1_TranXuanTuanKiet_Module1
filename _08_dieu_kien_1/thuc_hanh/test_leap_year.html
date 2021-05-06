@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <label for="year">Nhập năm ở đây</label>
+        <input type="number" id="year">
+    </div>
+    <p id="result">Kết quả right here</p>
+    <button onclick="ketqua();">Click here</button>
+    <script>
+        function ketqua() {
+            let a = parseInt(document.getElementById("year").value);
+            if (a%4 ==0){
+                if (a%100 ==0){
+                    if (a%400 ==0){
+                        document.getElementById("result").innerHTML="Năm này là năm nhuận"
+                    } else {
+                        document.getElementById("result").innerHTML="Năm này không phải là năm nhuận"
+                    }
+                } else {
+                    document.getElementById("result").innerHTML="Năm này là năm nhuận"
+                }
+            } else {
+                document.getElementById("result").innerHTML="Năm này không phải là năm nhuận"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -6,7 +6,9 @@
 </head>
 <body>
     <div>
+        <label for="number_one">Nhập số ở đây</label>
         <input type="number" id="number_one" size="20">
+        <label for="number_two">Nhập số ở đây</label>
         <input type="number" id="number_two" size="20">
     </div>
     <br>
@@ -21,41 +23,34 @@
     </div>
     <script>
         function sum() {
-            var x = document.getElementById("number_one").value;
-            var y = document.getElementById("number_two").value;
-            var x_one = parseFloat(x);
-            var y_one = parseFloat(y);
-            let z = x_one + y_one;
+            let x = parseFloat(document.getElementById("number_one").value);
+            let y = parseFloat(document.getElementById("number_two").value);
+            let z = x + y;
             document.getElementById("result").innerHTML= ("Kết quả là:"+ z);
             document.getElementById("result").style.backgroundColor="orange";
         }
         function subtraction() {
-            var x = document.getElementById("number_one").value;
-            var y = document.getElementById("number_two").value;
-            var x_one = parseFloat(x);
-            var y_one = parseFloat(y);
-            let z_two = x_one - y_one;
-            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            let x = parseFloat(document.getElementById("number_one").value);
+            let y = parseFloat(document.getElementById("number_two").value);
+            let z = x - y;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z);
             document.getElementById("result").style.backgroundColor="orange";
         }
         function multipli() {
-            var x = document.getElementById("number_one").value;
-            var y = document.getElementById("number_two").value;
-            var x_one = parseFloat(x);
-            var y_one = parseFloat(y);
-            let z_two = x_one * y_one;
-            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            let x = parseFloat(document.getElementById("number_one").value);
+            let y = parseFloat(document.getElementById("number_two").value);
+            let z = x * y;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z);
             document.getElementById("result").style.backgroundColor="orange";
         }
         function division() {
-            var x = document.getElementById("number_one").value;
-            var y = document.getElementById("number_two").value;
-            var x_one = parseFloat(x);
-            var y_one = parseFloat(y);
-            let z_two = x_one / y_one;
-            document.getElementById("result").innerHTML= ("Kết quả là:"+ z_two);
+            let x = parseFloat(document.getElementById("number_one").value);
+            let y = parseFloat(document.getElementById("number_two").value);
+            let z = x / y;
+            document.getElementById("result").innerHTML= ("Kết quả là:"+ z);
             document.getElementById("result").style.backgroundColor="orange";
         }
+        prompt()
     </script>
 </body>
 </html>

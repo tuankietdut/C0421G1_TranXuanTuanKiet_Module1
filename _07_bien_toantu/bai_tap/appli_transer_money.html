@@ -13,14 +13,16 @@
             <th>To Currency</th>
         </tr>
         <tr>
-            <td><input type="number" id="number" placeholder="Nhập số tiền muốn convert"></td>
+            <td>
+                <input type="number" id="number" placeholder="Nhập số tiền muốn convert">
+            </td>
             <td>
                 <select name="money_raw" id="money_raw">
                     <option value="VND">VietNam</option>
                 </select>
             </td>
             <td>
-                <select name="money_transfer" id=""money_transfer>
+                <select name="money_transfer" id="money_transfer">
                     <option value="USA">USA</option>
                 </select>
             </td>
@@ -30,12 +32,10 @@
         </tr>
     </table>
 </form>
-
 <script>
     function convert() {
-        let money = document.getElementById("number").value;
-        money_Vnd = parseFloat(money);
-        money_Usd = money_Vnd / 22000;
+        let money = parseFloat(document.getElementById("number").value);
+        let money_Usd = money / 22000;
         alert("Số tiền là: " + money_Usd);
     }
 </script>
