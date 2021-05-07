@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<form action="">
     <table>
         <tr>
             <th>Amount</th>
@@ -30,13 +29,14 @@
                 <button onclick="convert();">Convert</button>
             </td>
         </tr>
+        <tr id="result"></tr>
     </table>
-</form>
+
 <script>
     function convert() {
-        let money = parseFloat(document.getElementById("number").value);
+        let money = parseInt(document.getElementById("number").value);
         let money_Usd = money / 22000;
-        alert("Số tiền là: " + money_Usd);
+        document.getElementById("result").innerHTML=("Result: " + money_Usd);
     }
 </script>
 </body>

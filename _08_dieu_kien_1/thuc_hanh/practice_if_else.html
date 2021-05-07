@@ -5,14 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let input = prompt("What is the \"official\" name of JavaScript?,");
-    let value = "ECMAScript";
-    if (value === input){
-        alert("Right!!")
-    } else {
-        alert("You don't know? ECMAScript!")
-    }
-</script>
+    <div>
+        <label for="answer">What is the offical "name" of Javascript?</label>
+        <input type="text" id="answer" placeholder="Write the answer here!!"> <br>
+        <p id="result">Result will apperance right here!!</p>
+        <button onclick="answerCorrect()">Click here to see result</button>
+    </div>
+
+    <script>
+        function answerCorrect() {
+            let value = "ECMAScript";
+            let correctAnswer = document.getElementById("answer").value;
+            // typeof correctAnswer;
+            if ( correctAnswer === value ) {
+                document.getElementById("result").innerHTML="Right"
+            } else {
+                document.getElementById("result").innerHTML="You don't know? ECMAScript!"
+            }
+        }
+    </script>
 </body>
 </html>

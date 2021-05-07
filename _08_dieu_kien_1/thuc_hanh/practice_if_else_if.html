@@ -5,26 +5,60 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    let name = prompt("Nhập tên user: ");
-    if (name === "Admin"){
-        let pass = prompt("Nhập password: ");
-        if (pass === "TheMaster"){
-            alert("Welcome");
+<!--    <div>-->
+<!--        <label for="name">Name Account</label>-->
+<!--        <input type="text" id="name" placeholder="Write here!!"> <br>-->
+<!--        <label for="password">Password</label>-->
+<!--        <input type="password" id="password" style="display: none"> <br>-->
+<!--        <p id="resultOne"></p>-->
+<!--        <p id="resultTwo"></p>-->
+<!--        <button onclick="rightAccount()">Click here after enter your name account</button>-->
+<!--    </div>-->
+    <script>
+        // function rightAccount() {
+        //     let value = "Admin"
+        //     let correct = document.getElementById("name").value;
+        //     if (value === correct) {
+        //         document.getElementById("resultOne").innerText="Please enter your password";
+        //         document.getElementById("password").style.display="inline";
+        //         let valueTwo = "TheMaster";
+        //         let correctTwo = document.getElementById("password").value;
+        //         if (valueTwo === correctTwo){
+        //             document.getElementById("resultTwo").innerHTML="Welcome"
+        //         } else {
+        //             if (correctTwo == null){
+        //                 document.getElementById("resultTwo").innerHTML="Canceled"
+        //             } else {
+        //                 document.getElementById("resultTwo").innerHTML="Wrong Password"
+        //             }
+        //         }
+        //     } else {
+        //         if (value == null){
+        //             document.getElementById("resultOne").innerText="Canceled"
+        //         } else {
+        //             document.getElementById("resultOne").innerText="I dont know you"
+        //         }
+        //     }
+        // }
+        let name = prompt("Nhập tên user: ");
+        if (name === "Admin"){
+            let pass = prompt("Nhập password: ");
+            if (pass === "TheMaster"){
+                alert("Welcome");
+            } else {
+                if (pass = null){
+                    alert("Cancel");
+                } else {
+                    alert("Wrong password");
+                }
+            }
         } else {
-            if (pass = null){
+            if (name = null){
                 alert("Cancel");
             } else {
-                alert("Wrong password");
+                alert("I dont know you");
             }
         }
-    } else {
-        if (name = null){
-            alert("Cancel");
-        } else {
-            alert("I dont know you");
-        }
-    }
-</script>
+    </script>
 </body>
 </html>
