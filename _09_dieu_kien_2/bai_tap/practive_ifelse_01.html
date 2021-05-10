@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td, th{
+            border: 1px solid grey;
+            width: 100px;
+            text-align: center;
+            height: 30px;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div> BÀI 1 <br>
+        <label for="numberOne">Nhập a</label>
+        <input type="number" id="numberOne">
+        <label for="numberTwo">Nhập b</label>
+        <input type="number" id="numberTwo">
+        <button onclick="exerciseOne()">Kiểm tra kết quả</button>
+        <p id="resultOne"></p>
+    </div>
+    <hr>
+    <div> BÀI 2 <br>
+        <label for="age">Nhập tuổi của học sinh</label>
+        <input type="number" id="age">
+        <button onclick="exerciseTwo()">Kiểm tra kết quả</button>
+        <p id="resultTwo"></p>
+    </div>
+    <hr>
+    <div> BÀI 3 <br>
+        <label for="anyNumber">Nhập số nguyên bất kỳ</label>
+        <input type="number" id="anyNumber">
+        <button onclick="exerciseThree()">Kiểm tra kết quả</button>
+        <p id="resultThree"></p>
+    </div>
+    <hr>
+    <div> BÀI 4 <br>
+        <label for="maxOne">Nhập a</label>
+        <input type="number" id="maxOne">
+        <label for="maxTwo">Nhập b</label>
+        <input type="number" id="maxTwo">
+        <label for="maxThree">Nhập c</label>
+        <input type="number" id="maxThree">
+        <button onclick="exerciseFour()">Kiểm tra kết quả</button>
+        <p id="resultFour"></p>
+    </div>
+    <hr>
+    <div> BÀI 5 <br>
+        <label for="grade">Điểm thi giữa kỳ (hệ số 1)</label>
+        <input type="number" id="grade">
+        <label for="grareTwo">Điểm thi cuối kỳ (hệ số 2)</label>
+        <input type="number" id="grareTwo">
+        <button onclick="exerciseFive()">Kiểm tra kết quả</button>
+        <p id="resultFive"></p>
+    </div>
+    <hr>
+    <div> BÀI 6 <br>
+        <table style="border: 2px solid black; border-collapse: collapse">
+            <tr>
+                <th>Mức doanh số  bán hàng</th>
+                <th>% hoa hồng được thưởng</th>
+            </tr>
+            <tr>
+                <td>0 - 100</td>
+                <td>2%</td>
+            </tr>
+            <tr>
+                <td>100 - 500</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <td>> 500</td>
+                <td>15%</td>
+            </tr>
+        </table>
+        <label for="product">Số sản phẩm bán được (giá mỗi sản phẩm là 100,000VND)</label>
+        <input type="number" id="product">
+        <button onclick="exerciseSix()">Kiểm tra kết quả</button>
+        <p id="resultSix"></p>
+    </div>
+    <hr>
+    <div> BÀI 7
+        <table style="border: 2px solid black; border-collapse: collapse">
+            <tr>
+                <th></th>
+                <th>Giá cước 1 phút đầu</th>
+                <th>Giá cước sau 1 phút</th>
+            </tr>
+            <tr>
+                <td>Cuộc gọi nội mạng</td>
+                <td>250đ</td>
+                <td>300đ</td>
+            </tr>
+            <tr>
+                <td>Cuộc gọi ngoại mạng</td>
+                <td>350đ</td>
+                <td>500đ</td>
+            </tr>
+        </table>
+        <br>
+        <label for="phoneCall">Chọn cuộc gọi nội mạng hay ngoại mạng</label>
+        <select name="phone" id="phoneCall">
+            <option value="NoiMang">Nội Mạng</option>
+            <option value="NgoaiMang">Ngoại Mạng</option>
+        </select>
+        <label for="timeCall">Thời gian gọi (s)</label>
+        <input type="number" id="timeCall">
+        <p id="resultSeven"></p>
+        <button onclick="exerciseSeven()">Kiểm tra kết quả</button>
+
+    </div>
+    <script>
+
+
+        function exerciseOne() {
+            let a = document.getElementById("numberOne").value;
+            let b = document.getElementById("numberTwo").value;
+            let c = parseFloat(a) + parseFloat(b);
+            document.getElementById("resultOne").innerText = "Kết quả là: " + c;
+            document.getElementById("resultOne").style.backgroundColor = "grey"
+        }
+        
+        
+        function exerciseTwo() {
+            let a = document.getElementById("age").value;
+            if (parseInt(a) >= 16) {
+                document.getElementById("resultTwo").innerText = "Đủ điều kiện vào lớp 10 nhé em!!"
+                document.getElementById("resultTwo").style.backgroundColor = "grey"
+            } else {
+                document.getElementById("resultTwo").innerText = "Vài năm nữa mới đủ tuổi!"
+                document.getElementById("resultTwo").style.backgroundColor = "grey"
+            }
+        }
+
+
+        function exerciseThree() {
+            let a = document.getElementById("anyNumber").value;
+            if (parseFloat(a) > 0){
+                document.getElementById("resultThree").innerText = "Lớn hơn 0"
+                document.getElementById("resultThree").style.backgroundColor = "grey"
+            } else if (parseFloat(a) === 0) {
+                document.getElementById("resultThree").innerText = "Bằng 0"
+                document.getElementById("resultThree").style.backgroundColor = "grey"
+            } else {
+                document.getElementById("resultThree").innerText = "Nhỏ hơn 0"
+                document.getElementById("resultThree").style.backgroundColor = "grey"
+            }
+        }
+
+
+        function exerciseFour() {
+            let a = document.getElementById("maxOne").value;
+            let b = document.getElementById("maxTwo").value;
+            let c = document.getElementById("maxThree").value;
+            if ((a > b) && (a > c)){
+                document.getElementById("resultFour").innerText = "a lớn nhất: " + a
+                document.getElementById("resultFour").style.backgroundColor = "grey"
+            } else if (b > c){
+                document.getElementById("resultFour").innerText = "b lớn nhất: " + b
+                document.getElementById("resultFour").style.backgroundColor = "grey"
+            } else {
+                document.getElementById("resultFour").innerText = "c lớn nhất: " + c
+                document.getElementById("resultFour").style.backgroundColor = "grey"
+            }
+        }
+
+
+        function exerciseFive() {
+            let a = document.getElementById("grade").value;
+            let b = document.getElementById("grareTwo").value;
+            let c = (parseFloat(a) + parseFloat(b)*2)/3;
+            document.getElementById("resultFive").innerText = "Điểm trung bình học kỳ là: " + c;
+            document.getElementById("resultFive").style.backgroundColor = "grey"
+        }
+
+
+        function exerciseSix() {
+            let a = document.getElementById("product").value;
+            if (parseInt(a) > 500){
+                let b = (parseInt(a)*100000)*15/100;
+                document.getElementById("resultSix").innerText = "Tiền hoa hồng nhận được: " + b;
+                document.getElementById("resultSix").style.backgroundColor = "grey"
+            } else if (parseInt(a) > 100){
+                let b = (parseInt(a)*100000)*5/100;
+                document.getElementById("resultSix").innerText = "Tiền hoa hồng nhận được: " + b;
+                document.getElementById("resultSix").style.backgroundColor = "grey"
+            } else {
+                let b = (parseInt(a)*100000)*2/100;
+                document.getElementById("resultSix").innerText = "Tiền hoa hồng nhận được: " + b;
+                document.getElementById("resultSix").style.backgroundColor = "grey"
+            }
+        }
+
+
+        function exerciseSeven() {
+            let a = document.getElementById("phoneCall").value;
+            let b = document.getElementById("timeCall").value;
+            if ((a === "NoiMang") && (parseInt(b) > 60)){
+                b = ((60*250) + ((parseInt(b)-60)*300));
+                document.getElementById("resultSeven").innerText = "Tiền cước sử dụng dịch vụ là: " + b;
+                document.getElementById("resultSeven").style.backgroundColor = "grey";
+            } else if ((a === "NoiMang") && (parseInt(b) < 60)){
+                b = parseInt(b)*250;
+                document.getElementById("resultSeven").innerText = "Tiền cước sử dụng dịch vụ là: " + b;
+                document.getElementById("resultSeven").style.backgroundColor = "grey";
+            } else if ((a === "NgoaiMang") && (parseInt(b) > 60)){
+                b = ((60*350) + ((parseInt(b)-60)*500));
+                document.getElementById("resultSeven").innerText = "Tiền cước sử dụng dịch vụ là: " + b;
+                document.getElementById("resultSeven").style.backgroundColor = "grey";
+            } else if ((a === "NgoaiMang") && (parseInt(b) < 60)){
+                b = parseInt(b)*350;
+                document.getElementById("resultSeven").innerText = "Tiền cước sử dụng dịch vụ là: " + b;
+                document.getElementById("resultSeven").style.backgroundColor = "grey";
+            }
+        }
+    </script>
+</body>
+</html>

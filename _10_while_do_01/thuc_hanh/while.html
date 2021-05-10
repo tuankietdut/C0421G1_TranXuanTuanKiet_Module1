@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //     Bài 1 : Cách 1
+        let b = 0;
+        for (let a=prompt("Nhập a: "); a !== "-1"; a = prompt(" Nhập tiếp") ){
+            b += parseInt(a);
+            alert(b);
+            // a = prompt("Nhập tiếp ");
+        }
+        alert("Tổng là: " + b);
+
+        // Bài 1: Cách 2
+        // let num = prompt("Nhập số: ");
+        // let total = 0;
+        // while (num !=="1"){
+        //     total += parseInt(num);
+        //     alert(total);
+        //     num = prompt("Nhập tiếp đi: ")
+        // }
+
+        // Bài 2: cách 1
+        // let i = 1;
+        // while (i < 100){
+        //     document.write("<hr width = " + i + "%>")
+        //     i++;
+        // }
+
+
+        for (let i =1; i < 100; i++){
+            document.write("<hr width = " + i + "%>")
+        }
+    </script>
+</body>
+</html>

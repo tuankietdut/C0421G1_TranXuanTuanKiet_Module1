@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="resultTwo"></p>
+    <script>
+        for (let i = 0; i < 5; i++){
+            text = "The number is " + i;
+        }
+        document.getElementById("result").innerText = text;
+
+
+
+        let a = prompt("Nhập số đi: ");
+        let total = 0;
+        for ( let b = 1; b <= parseInt(a); b++){
+             total += b;
+            document.getElementById("resultTwo").innerText = " Tổng là: " + total;
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doReady()">
+    <img src="https://www.einerd.com.br/wp-content/uploads/2019/11/Izuku-Midoriya-My-Hero-Academia-capa.jpg"
+         alt="imamge" id="charac" height="200px" style="position: absolute; left: 0; top: 0">
+    <script>
+        function upArrowPress() {
+            let element = document.getElementById("charac");
+            element.style.top = parseInt(element.style.top) - 5 + "px";
+        }
+
+
+        function downArrowPress() {
+            let element = document.getElementById("charac");
+            element.style.top = parseInt(element.style.top) + 5 + "px";
+        }
+
+
+        function leftArrowPress() {
+            let element = document.getElementById("charac");
+            element.style.left = parseInt(element.style.left) - 5 + "px";
+        }
+
+
+        function rightArrowPress() {
+            let element = document.getElementById("charac");
+            element.style.left = parseInt(element.style.left) + 5 + "px";
+        }
+
+        function moveSelection(x) {
+            switch (x.keyCode) {
+                case 37:
+                    leftArrowPress();
+                    break;
+                case 39:
+                    rightArrowPress();
+                    break;
+                case 40:
+                    downArrowPress();
+                    break;
+                case 38:
+                    upArrowPress();
+                    break;
+            }
+        }
+        function doReady() {
+            window.addEventListener("keydown", moveSelection);
+        }
+
+    </script>
+</body>
+</html>

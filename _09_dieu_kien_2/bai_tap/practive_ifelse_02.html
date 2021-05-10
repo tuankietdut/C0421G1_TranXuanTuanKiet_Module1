@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div> BÀI 1 <br>
+        <label for="celcius">Nhập <span><sup>o</sup> C</span></label>
+        <input type="number" id="celcius">
+        <button onclick="exerciseOne()">Kiểm tra kết quả</button>
+        <p id="resultOne"></p>
+    </div>
+    <hr>
+    <div> BÀI 2 <br>
+        <label for="meet">Nhập số mét muốn đổi</label>
+        <input type="number" id="meet">
+        <button onclick="exerciseTwo()">Kiểm tra kết quả</button>
+        <p id="resultTwo"></p>
+    </div>
+    <hr>
+    <div> BÀI 3 <br>
+        <label for="canh_a">Nhập cạnh của a của hình vuông (m)</label>
+        <input type="number" id="canh_a">
+        <button onclick="exerciseThree()">Kiểm tra kết quả</button>
+        <p id="resultThree"></p>
+    </div>
+    <hr>
+    <div> BÀI 4 <br>
+        <label for="hcn_a">Nhập chiều dài hình chữ nhật(m)</label>
+        <input type="number" id="hcn_a">
+        <label for="hcn_b">Nhập chiều rộng hình chữ nhật(m)</label>
+        <input type="number" id="hcn_b">
+        <button onclick="exerciseFour()">Kiểm tra kết quả</button>
+        <p id="resultFour"></p>
+    </div>
+    <hr>
+    <div> BÀI 5 <br>
+        <label for="htg_a">Nhập cạnh kề thứ nhất của tam giác vuông(m)</label>
+        <input type="number" id="htg_a">
+        <label for="htg_b">Nhập cạnh kề thứ hai của tam giác vuông (m)</label>
+        <input type="number" id="htg_b">
+        <button onclick="exerciseFive()">Kiểm tra kết quả</button>
+        <p id="resultFive"></p>
+    </div>
+    <hr>
+    <div> BÀI 6 <br>
+        <div>Phương trình bậc nhất có dạng ax + b = 0</div>
+        <label for="parameterOne">Nhập tham số a:</label>
+        <input type="number" id="parameterOne">
+        <label for="parameterTwo">Nhập tham số b:</label>
+        <input type="number" id="parameterTwo">
+        <button onclick="exerciseSix()">Kiểm tra kết quả</button>
+        <p id="resultSix"></p>
+    </div>
+    <hr>
+    <div> BÀI 7 <br>
+        <div>Phương trình bậc hai có dạng a<span>x<sup>2</sup></span> + bx + c =0</div>
+        <label for="paraOne">Nhập tham số a:</label>
+        <input type="number" id="paraOne">
+        <label for="paraTwo">Nhập tham số b:</label>
+        <input type="number" id="paraTwo">
+        <label for="paraThree">Nhập tham số c:</label>
+        <input type="number" id="paraThree">
+        <button onclick="exerciseSeven()">Kiểm tra kết quả</button>
+        <p id="resultSeven"></p>
+    </div>
+    <hr>
+    <div> BÀI 8 <br>
+        <label for="age">Nhập tuổi để check</label>
+        <input type="number" id="age">
+        <button onclick="exerciseEight()">Kiểm tra kết quả</button>
+        <p id="resultEight"></p>
+    </div>
+    <hr>
+    <div> BÀI 9 <br>
+        <label for="canhMot">Nhập cạnh thứ nhất:</label>
+        <input type="number" id="canhMot">
+        <label for="canhHai">Nhập cạnh thứ hai:</label>
+        <input type="number" id="canhHai">
+        <label for="canhBa">Nhập cạnh thứ ba:</label>
+        <input type="number" id="canhBa">
+        <button onclick="exerciseNine()">Kiểm tra kết quả</button>
+        <p id="resultNine"></p>
+    </div>
+    <hr>
+    <div> BÀI 10 <br>
+        <img src="gia_dien.png" alt="Bảng giá điện" height="200px" style="border: 2px solid black">
+        <label for="moneyElectric">Nhập số chữ điện tiêu thụ (kWh)</label>
+        <input type="number" id="moneyElectric">
+        <button onclick="exerciseTen()">Kiểm tra kết quả</button>
+        <p id="resultTen"></p>
+    </div>
+    <hr>
+    <div> BÀI 11 <br>
+        <label for="tax">Chọn tổng thu nhập của bản thân (triệu đồng/năm)</label>
+        <select name="tax" id="tax">
+            <option value="Bac1">0 đến 60</option>
+            <option value="Bac2">60 đến 120</option>
+            <option value="Bac3">120 đến 216</option>
+            <option value="Bac4">216 đến 384</option>
+            <option value="Bac5">384 đến 624</option>
+            <option value="Bac6">624 đến 960</option>
+            <option value="Bac7">trên 960</option>
+        </select>
+        <label for="taxYourself">Nhập tổng thu nhập của thân (triệu đồng/năm)</label>
+        <input type="number" id="taxYourself">
+        <button onclick="exerciseEleven()">Kiểm tra kết quả</button>
+        <p id="resultEleven"></p>
+    </div>
+    <hr>
+    <div> BÀI 12 <br>
+        <label for="profitBank">3 gói lãi suất cho vay hiện có</label>
+        <select name="" id="profitBank">
+            <option value="oneYear">Lãi suất vay thời hạn 1 năm (10%)</option>
+            <option value="tenYear">Lãi suất vay thời hạn 10 năm (15%)</option>
+            <option value="twentyYear">Lãi suất vay thời hạn 20 năm (20%)</option>
+        </select>
+        <label for="moneyBorrow">Nhập số tiền muốn vay: </label>
+        <input type="number" id="moneyBorrow">
+        <button onclick="exerciseTwenty()">Kiểm tra kết quả</button>
+        <p id="resultTwenty"></p>
+    </div>
+
+    <script>
+
+        function exerciseOne() {
+            let a = document.getElementById("celcius").value;
+            let b = (parseFloat(a)*9/5)+32;
+            document.getElementById("resultOne").innerText = "Độ F: " + b;
+        }
+
+
+        function exerciseTwo() {
+            let a = document.getElementById("meet").value;
+            let b = parseFloat(a)*3.2808;
+            document.getElementById("resultTwo").innerText = "Kết quả Feet: " + b;
+        }
+
+
+        function exerciseThree() {
+            let a = document.getElementById("canh_a").value;
+            let b = a**a;
+            document.getElementById("resultThree").innerText = "Diện tích hình vuông: " + b;
+        }
+
+        function exerciseFour() {
+            let a = document.getElementById("hcn_a").value;
+            let b = document.getElementById("hcn_b").value;
+            let c = parseFloat(a) * parseFloat(b);
+            document.getElementById("resultFour").innerText = "Diện tích hình chữ nhật: " + c;
+        }
+
+
+        function exerciseFive() {
+            let a = document.getElementById("htg_a").value;
+            let b = document.getElementById("htg_b").value;
+            let c = 1/2 * parseFloat(a) * parseFloat(b);
+            document.getElementById("resultFive").innerText = "Diện tích tam giác vuông: " + c;
+        }
+
+
+        function exerciseSix() {
+            let a = document.getElementById("parameterOne").value;
+            let b = document.getElementById("parameterTwo").value;
+            let c = (-1 * parseFloat(b))/parseFloat(a)
+            if ((parseFloat(a) === 0) && (parseFloat(b) === 0)){
+                document.getElementById("resultSix").innerText = "Phương trình vô số nghiệm"
+            } else if ((parseFloat(a) === 0) && (parseFloat(b) !== 0)){
+                document.getElementById("resultSix").innerText = "Phương trình vô nghiệm"
+            } else {
+                document.getElementById("resultSix").innerText = "Phương trình có nghiệm x: " + c;
+            }
+        }
+
+
+        function exerciseSeven() {
+            let a = parseFloat(document.getElementById("paraOne").value);
+            let b = parseFloat(document.getElementById("paraTwo").value);
+            let c = parseFloat(document.getElementById("paraThree").value);
+            let denta = (b*b) - (4 * a *c);
+            if (denta < 0){
+                document.getElementById("resultSeven").innerText = "Phương trình vô nghiệm";
+            } else if (denta === 0){
+                let nghiem = (-1 * b)/ 2*a;
+                document.getElementById("resultSeven").innerText = "Phương trình có nghiệm kép: " + nghiem;
+            } else {
+                let nghiemOne = ((-1 * b) + Math.sqrt(denta))/ 2*a;
+                let nghiemTwo = ((-1 * b) - Math.sqrt(denta))/ 2*a;
+                document.getElementById("resultSeven").innerText = "Phương trình có 2 nghiệm, Nghiệm 1: " + nghiemOne + "; Nghiệm 2: " + nghiemTwo;
+            }
+        }
+
+
+        function exerciseEight() {
+            let a = document.getElementById("age").value;
+            if ((parseInt(a) > 0) && (parseInt(a) < 120)){
+                document.getElementById("resultEight").innerText = " Đây là tuổi của 1 con người"
+            } else {
+                document.getElementById("resultEight").innerText = "Đây không phải là tuổi của 1 con người"
+            }
+        }
+
+
+        function exerciseNine() {
+            let a = document.getElementById("canhMot").value;
+            let b = document.getElementById("canhHai").value;
+            let c = document.getElementById("canhBa").value;
+            if ((parseFloat(a) + parseFloat(b) > parseFloat(c)) && ((parseFloat(a) + parseFloat(c) > parseFloat(b))
+                && ((parseFloat(b) + parseFloat(c) > parseFloat(a)) && (parseFloat(a) > 0 ) && (parseFloat(b) > 0) && (parseFloat(c) > 0)))){
+                document.getElementById("resultNine").innerText = "Là 3 cạnh của tam giác"
+            } else {
+                document.getElementById("resultNine").innerText = "Không phải 3 cạnh của tam giác"
+            }
+        }
+
+
+        function exerciseTen() {
+            let  a =   parseFloat(document.getElementById("moneyElectric").value);
+            if (a < 50){
+                let b = a * 1678;
+                document.getElementById("resultTen").innerText = "Tiền điện phải trả: " + b;
+            } else if (a < 100){
+                b = (50 * 1678) + ((a-50)*1734);
+                document.getElementById("resultTen").innerText = "Tiền điện phải trả: " + b;
+            } else if (a < 200){
+                b = (50 * 1678) + (50 * 1734) + ((a - 100)*2014);
+                document.getElementById("resultTen").innerText = "Tiền điện phải trả: " + b;
+            } else if (a < 300){
+                b = (50 * 1678) + (50 * 1734) + ((a - 200)*2536) + (100 * 2014);
+                document.getElementById("resultTen").innerText = "Tiền điện phải trả: " + b;
+            } else if (a < 400) {
+                b = (50 * 1678) + (50 * 1734) + ((a - 300)*2834) + (100 * 2014) +(100 * 2536);
+                document.getElementById("resultTen").innerText = "Tiền điện phải trả: " + b;
+            } else {
+                b = (50 * 1678) + (50 * 1734) + ((a - 400)*2927) + (100 * 2014) +(100 * 2536) + (100*2834);
+            }
+        }
+
+
+        function exerciseEleven() {
+            let a = parseInt(document.getElementById("taxYourself").value);
+            let b = document.getElementById("tax").value;
+            if (b === "Bac1"){
+                a = a * 5 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 5%: " + a + " triệu đồng/năm";
+            } else if (b === "Bac2"){
+                a = a * 10 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 10%: " + a + " triệu đồng/năm";
+            } else if (b ==="Bac3"){
+                a = a * 15 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 15%: " + a + " triệu đồng/năm";
+            } else if (b ==="Bac4"){
+                a = a * 20 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 20%: " + a + " triệu đồng/năm";
+            } else if (b ==="Bac5"){
+                a = a * 25 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 25%: " + a + " triệu đồng/năm";
+            } else if (b ==="Bac6"){
+                a = a * 30 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 30%: " + a + " triệu đồng/năm";
+            } else {
+                a = a * 35 / 100
+                document.getElementById("resultEleven").innerText = "Thuế phải trả với thuế suất 35%: " + a + " triệu đồng/năm";
+            }
+        }
+
+
+        function exerciseTwenty() {
+            let a = document.getElementById("profitBank").value;
+            let b = document.getElementById("moneyBorrow").value;
+            if (a === "oneYear"){
+                b = (parseInt(b)* 10 / 100)/12;
+                document.getElementById("resultTwenty").innerText = "Lãi phải trả 1 tháng là: " + b + "triệu đồng";
+            } else if (b ==="tenYear"){
+                b = (parseInt(b)* 15 / 100)/120;
+                document.getElementById("resultTwenty").innerText = " Lãi phải trả 1 tháng là: " + b +"triệu đồng";
+            } else {
+                b = (parseInt(b) * 20 / 100)/240;
+                document.getElementById("resultTwenty").innerText = " Lãi phải trả 1 tháng là: " + b +"triệu đồng";
+            }
+        }
+
+    </script>
+</body>
+</html>

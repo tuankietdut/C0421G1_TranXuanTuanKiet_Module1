@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <label for="high">Nhập chiều cao (m)</label>
+        <input type="number" id="high"> <br> <br>
+        <label for="weight">Nhập cân nặng (kg)</label>
+        <input type="number" id="weight"> <br>
+    </div>
+    <p id="result">Kết quả sẻ được hiển thị ở đây</p>
+    <button onclick="index()">Click here</button>
+    <script>
+
+        function index() {
+            let a = document.getElementById("high").value;
+            let b = document.getElementById("weight").value;
+            let c = parseFloat(b)/(parseFloat(a)**2);
+            if (c >= 30 ){
+                document.getElementById("result").innerText="Obese"
+            } else if (c >= 25) {
+                document.getElementById("result").innerText="Overweight"
+            } else if (c >= 18.5) {
+                document.getElementById("result").innerText="Normal"
+            } else {
+                document.getElementById("result").innerText="Underweight"
+            }
+
+        }
+    </script>
+</body>
+</html>

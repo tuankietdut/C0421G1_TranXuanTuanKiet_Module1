@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img id="image" src="https://th.bing.com/th/id/R888ffe806d63642c84133eeb37af2559?rik=0WQdPo9%2fch1X5Q&pid=ImgRaw" alt="img ball" height="250px">
+    <p>Click button below to move the image to right </p>
+    <button onclick="moveRight();">Click here</button>
+    <script>
+        let imgObject;
+        function init() {
+            imgObject = document.getElementById("image");
+            document.getElementById("image").style.position="relative";
+            document.getElementById("image").style.left="0px";
+        }
+        window.onload = init();
+        function moveRight() {
+            document.getElementById("image").style.left = parseInt(imgObject.style.left) + 10 + "px";
+        }
+    </script>
+</body>
+</html>
