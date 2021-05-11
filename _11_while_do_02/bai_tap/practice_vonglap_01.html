@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+    <div>BÀI 1 <br>
+        
+    </div>
+
+
     <div>BÀI 3 <br>
         <span id="resultOne"></span>
         <span id="resultTwo"></span>
@@ -39,8 +44,10 @@
 
     <div>BÀI 8 <br>
         <span id="resultEight"></span>
-        <button onclick="exerciseNine()">Game đoán số: click để chơi</button>
+        <button onclick="exerciseEight()">Game đoán số: click để chơi</button>
     </div>
+
+
 
 
 
@@ -141,9 +148,28 @@
         }
 
 
-        function exerciseNine() {
-
-
+        function exerciseEight() {
+            let min = parseInt(prompt("Nhập min"));
+            let max = parseInt(prompt("Nhập max"));
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max-min) + min);
+            }
+            let x = getRandomInt(min, max);
+            console.log(x);
+            let variable = parseInt(prompt("Nhập số dự đoán:"));
+            for (let i = 0; i< 3; i++){
+                if (variable === x){
+                    alert("Bingo");
+                    break;
+                } else if (variable > x){
+                    alert("Số vừa nhập lớn hơn");
+                    variable = parseInt(prompt("Nhập lại nhé"));
+                } else {
+                    alert("Số vừa nhập bé hơn");
+                    variable = parseInt(prompt("Nhập lại nhé"));
+                }
+            }
+            alert("Số random là: "+ x);
         }
 
 
