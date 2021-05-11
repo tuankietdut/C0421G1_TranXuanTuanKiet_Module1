@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 3 <br>
+        <span id="resultOne"></span>
+        <span id="resultTwo"></span>
+        <span id="resultThree"></span>
+        <button onclick="exerciseThree()">Dãy fibonacci</button>
+    </div>
+    <hr>
+
+
+    <div>BÀI 4 <br>
+        <span id="resultFour"></span>
+        <button onclick="exerciseFour()">Số đầu tiên trong dãy fibonacci chia hết cho 5</button>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <span id="resultFive"></span>
+        <button onclick="exerciseFive()">Tổng 20 số đầu tiên trong dãy fibonacci</button>
+    </div>
+    <hr>
+
+    <div>BÀI 6 <br>
+        <span id="resultSix"></span>
+        <button onclick="exerciseSix()">Tổng 30 số chia hết cho 7</button>
+    </div>
+
+    <div>BÀI 7 <br>
+        <span id="resultSeven"></span>
+        <button onclick="exerciseSeven()">FizzBuzz</button>
+    </div>
+    <hr>
+
+    <div>BÀI 8 <br>
+        <span id="resultEight"></span>
+        <button onclick="exerciseNine()">Game đoán số: click để chơi</button>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+
+
+        function exerciseThree() {
+            let a = 1, b = 2, c = 0;
+            let string = "";
+            document.getElementById("resultOne").innerText = a + " |";
+            document.getElementById("resultTwo").innerText = b + " |";
+            for (let i = 1; i < 19; i++) {
+                c = a + b;
+                string += c + " | ";
+                document.getElementById("resultThree").innerHTML = string;
+                a = b;
+                b = c;
+            }
+        }
+
+
+        function exerciseFour() {
+            let a = 1, b = 2, c = 0;
+            let string = "";
+            for (let i = 1; i < 19; i++) {
+                c = a + b;
+                if (c % 5 === 0){
+                    string += c + " | ";
+                    document.getElementById("resultFour").innerHTML = string;
+                    break;
+                }
+                a = b;
+                b = c;
+            }
+        }
+
+
+        function exerciseFive() {
+            let a = 1, b = 2, c = 0;
+            let d = "1+2+";
+            for (let i = 1; i < 19; i++) {
+                c = a + b;
+                d += c + "+";
+                a = b;
+                b = c;
+            }
+            console.log(d);
+            let x = d.substring(0,d.length - 1);
+            x = eval(x);
+            document.getElementById("resultFive").innerText = x;
+        }
+
+
+        function exerciseSix() {
+            let a = 7;
+            let i = 0;
+            let b = "";
+            while (i<30){
+                if (a%7 === 0){
+                b += "+" +a;
+                i++;
+                a++;
+                } else {
+                    a++;
+                }
+                console.log(a);
+                console.log(b);
+            }
+            b = eval(b);
+            document.getElementById("resultSix").innerText = b;
+        }
+
+
+        function exerciseSeven() {
+            let a = 1;
+            let b = "";
+            for (let i =0; i< 100; i++){
+                if ((a%3 ===0) && (a%5 ===0)){
+                    b += " Fizz and Buzz ";
+                    a++;
+                } else if (a%5 ===0){
+                    b += " Buzz ";
+                    a++;
+                } else if (a%3 ===0){
+                    b += " Fizz ";
+                    a++;
+                } else {
+                    b += " " + a;
+                    a++;
+                }
+            }
+            document.getElementById("resultSeven").innerText = b;
+        }
+
+
+        function exerciseNine() {
+
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="result">Kết quả hiển thị ở đây <br></p>
+
+    <script>
+        // let number;
+        // number = parseInt(prompt("Nhập X"));
+        // let display="";
+        // let factor = 2;
+        // for (let count = 0; count < number; ){
+        //     let i = 2;
+        //     while (i <= Math.sqrt(factor)){
+        //         if (factor % i ===0){
+        //             i++;
+        //         } else {
+        //             display += "Số nguyên tố" + factor + "<br>";
+        //             document.getElementById("result").innerHTML = display;
+        //             count++;
+        //         }
+        //     }
+        //     factor ++;
+        // }
+
+        let number;
+        number = parseInt(prompt("Nhập X"));
+        let a =false;
+        let display = "";
+        let n = 2;
+        let count = 0;
+        while (n < 4){
+                display += "Số nguyên tố là: " + n +"<br>";
+                document.getElementById("result").innerHTML = display;
+            n++;
+            count++;
+        }
+        console.log(count);
+        console.log(n);
+        console.log(number);
+        while (count < number){
+            for (let i =2; i <= Math.sqrt(n); i++){
+                if (n%i ===0){
+                    a = true;
+                }
+            }
+            if (a){
+                n++;
+            } else {
+                display += "Số nguyên tố là: " + n + "<br>";
+                document.getElementById("result").innerHTML = display;
+                n++;
+                count++;
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
