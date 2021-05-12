@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="getNumber" type="number" placeholder="Nhập element" size="30px">
+    <button onclick="addArray()">Add</button>
+    <button onclick="displayMonitor()">Display</button>
+    <br>
+    <hr>
+    <p id="result"></p>
+    
+    <script>
+        let element =[];
+        let a =0;
+        let  text = "";
+
+        function addArray() {
+            element[a] = document.getElementById("getNumber").value;
+            document.getElementById("result").innerHTML = "Element "+ a + ": "+ element[a] + "<br>";
+            a++;
+            document.getElementById("getNumber").value = "";
+        }
+
+        function displayMonitor() {
+            for (let i =0; i < element.length; i++){
+                text += "Element "+ i + ": "+ element[i] + "<br>";
+            }
+            document.getElementById("result").innerHTML = text;
+        }
+        
+    </script>
+</body>
+</html>

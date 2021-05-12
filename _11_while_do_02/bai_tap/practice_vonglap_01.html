@@ -87,6 +87,8 @@
                     a = parseInt(prompt("Nhập lại giá trị nhiệt độ"))
                 }
             }
+            alert("Đã ok rồi!!");
+
         }
 
 
@@ -164,16 +166,16 @@
             let b = "";
             for (let i =0; i< 100; i++){
                 if ((a%3 ===0) && (a%5 ===0)){
-                    b += " Fizz and Buzz ";
+                    b += " Fizz and Buzz||";
                     a++;
                 } else if (a%5 ===0){
-                    b += " Buzz ";
+                    b += " Buzz||";
                     a++;
                 } else if (a%3 ===0){
-                    b += " Fizz ";
+                    b += " Fizz||";
                     a++;
                 } else {
-                    b += " " + a;
+                    b += a + "||" ;
                     a++;
                 }
             }
@@ -190,7 +192,7 @@
             let x = getRandomInt(min, max);
             console.log(x);
             let variable = parseInt(prompt("Nhập số dự đoán:"));
-            for (let i = 0; i< 3; i++){
+            for (let i = 1; i< 3; i++){
                 if (variable === x){
                     alert("Bingo");
                     break;
@@ -202,7 +204,6 @@
                     variable = parseInt(prompt("Nhập lại nhé"));
                 }
             }
-            alert("Số random là: "+ x);
         }
 
 
