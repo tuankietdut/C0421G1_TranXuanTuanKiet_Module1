@@ -6,9 +6,15 @@
 </head>
 <body>
     <div>BÀI 1 <br>
-        
+        <span id="displayOne"></span>
+        <button onclick="exerciseOne()">sử dụng vòng lặp, đến số 99 hiển thị thông báo hoàn thành</button>
     </div>
+    <hr>
 
+    <div>BÀI 2 <br>
+        <span id="displayTwo"></span>
+        <button onclick="exerciseTwo()">Kiểm tra nhiệt độ</button>
+    </div>
 
     <div>BÀI 3 <br>
         <span id="resultOne"></span>
@@ -57,6 +63,33 @@
 
 
     <script>
+        function exerciseOne() {
+            for (let i =1; i< 100; i++){
+                console.log(i);
+                if (i === 99){
+                 alert("Đã hoàn thành")
+             }
+            }
+        }
+
+
+        function exerciseTwo() {
+            let a = parseInt(prompt("Nhập vào nhiệt độ đi mấy chế: "));
+            if ((a<100) && (a>20)){
+                alert("Đã ok rồi!!")
+            }
+            while ((a>100) || (a<20)){
+                if (a>100){
+                    alert("Giảm nhiệt độ xuống!!!");
+                    a = parseInt(prompt("Nhập lại giá trị nhiệt độ"))
+                } else if (a<20){
+                    alert("Tăng nhiệt độ lên!!!");
+                    a = parseInt(prompt("Nhập lại giá trị nhiệt độ"))
+                }
+            }
+        }
+
+
 
 
         function exerciseThree() {

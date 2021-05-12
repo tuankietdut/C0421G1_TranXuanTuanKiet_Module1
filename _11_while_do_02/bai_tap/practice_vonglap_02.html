@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <p id="resultOne"></p>
+        <button onclick="exerciseOne()">Click để nhập số</button>
+    </div>
+
+
+    <div>BÀI 2 <br>
+        <p id="resultTwo"></p>
+        <button onclick="exerciseTwo()">Tính giai thừa của 1 số nguyên</button>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+        <p id="resultThree_1"></p>
+        <p id="resultThree_2"></p>
+        <p id="resultThree_3"></p>
+        <p id="resultThree_4"></p>
+        <button onclick="exerciseThree()">In tam giác vuông với các góc khác nhau</button>
+    </div>
+    <hr>
+
+    <div>BÀI 4 <br>
+        <p id="resultFour"></p>
+        <button onclick="exerciseFour()">In hình chữ nhật</button>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <p>Với số tiền cho vay là 200.000.000; vay trong 12 tháng và lãi suất hàng tháng là 10%</p>
+        <p id="resultFive"></p>
+        <button onclick="exerciseFive()">Tính tiền lãi</button>
+    </div>
+
+
+
+    <script>
+
+        function exerciseOne() {
+            let a = parseInt(prompt("Nhập số để in ra chuỗi Fibonacci: "));
+            let x =1, y =2,c;
+            let display = "1 || 2";
+            for (let i =3; i <= a; i++){
+                c = x + y;
+                display += " ||" +c ;
+                x = y;
+                y = c;
+            }
+            document.getElementById("resultOne").innerText = display;
+        }
+
+
+
+
+
+        function exerciseTwo() {
+            let a = parseInt(prompt("Nhập số để tính giai thừa: "));
+            let b = a;
+            let c=a;
+            while (b > 1){
+                b = (b -1);
+                a = a * b;
+                console.log(a);
+            }
+            document.getElementById("resultTwo").innerText = c+ "! = " + a;
+        }
+
+
+        function exerciseThree() {
+            let displayOne = "";
+            let a = parseInt(prompt("Nhập row muốn chạy"));
+            let i;
+            let space = "&nbsp;&nbsp;";
+
+            for ( i = 1; i <=a; i++){
+                for (let j = a; j >=i; j--){
+                    displayOne += "*";
+                }
+                for (let j =1;j <= i; j++ ){
+                    displayOne += space ;
+                }
+                displayOne += "<br>";
+            }
+            document.getElementById("resultThree_1").innerHTML = displayOne;
+
+            let displayTwo ="";
+            for ( i = 1; i <=a; i++){
+                for (let j = a; j >=i; j--){
+                    displayTwo += space;
+                }
+                for (let j =1;j <= i; j++ ){
+                    displayTwo += "*" ;
+                }
+                displayTwo += "<br>";
+            }
+            document.getElementById("resultThree_2").innerHTML = displayTwo;
+
+            let displayThree ="";
+            for ( i = 1; i <= a; i++){
+                for (let j = 1; j <=i; j++){
+                    displayThree += "*";
+                }
+                for (let j = a;j >= i; j-- ){
+                    displayThree += space ;
+                }
+                displayThree += "<br>";
+            }
+            document.getElementById("resultThree_3").innerHTML = displayThree;
+
+            let displayFour ="";
+            for ( i = 1; i <= a; i++){
+                for (let j = 1; j <=i; j++){
+                    displayFour += space;
+                }
+                for (let j = a;j >= i; j-- ){
+                    displayFour += "*" ;
+                }
+                displayFour += "<br>";
+            }
+            document.getElementById("resultThree_4").innerHTML = displayFour;
+        }
+
+
+        function exerciseFour() {
+            let a = parseInt(prompt("Nhập chiều dài: "));
+            let b = parseInt(prompt("Nhập chiều rộng"));
+            let display = "";
+            let space ="&nbsp;&nbsp;"
+            for (let i = 1; i <= b; i++){
+                if ((i === 1) || (i===b)){
+                    for (let j =1; j <= a; j++){
+                        display += "*"
+                    }
+                } else {
+                    for (let j =1; j<= a ;j++){
+                        if ((j===1) || (j===a)){
+                            display += "*"
+                        } else {
+                            display += space;
+                        }
+                    }
+                }
+                display += "<br>";
+            }
+            document.getElementById("resultFour").innerHTML = display;
+        }
+
+
+        function exerciseFive() {
+            let a = 200000000/12 * 0.1;
+            let b= 0;
+            for (let i =1; i<=12;i++){
+                b +=a;
+            }
+            b = b + (a*12/0.1);
+            document.getElementById("resultFive").innerHTML = "Tổng tiền trả trong 1 năm: " + b +" Hai trăm hai chục triêu";
+        }
+
+
+    </script>
+</body>
+</html>
