@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <span id="displayOne">Từ chuỗi ["Red","Blue","Green","Grey","Black"] </span>
+        <button onclick="exerciseOne()">Click để transfer mảng</button>
+    </div>
+    <hr>
+
+    <div>BÀI 2 <br>
+        <span id="displayTwo">Chèn dấu - giữa 2 số chẵn</span>
+        <button onclick="exerciseTwo()">Click để chạy function</button>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+        <span id="displayThree">Chuyển chử cái thường thành chữ upperCase</span>
+        <button onclick="exerciseThree()">Click để chạy function</button>
+    </div>
+
+    <script>
+        function exerciseOne(){
+            let japan = ["Red","Blue","Green","Grey","Black"];
+            document.getElementById("displayOne").innerHTML= japan.toString();
+        }
+
+
+        function exerciseTwo() {
+            let num = prompt();
+            let str = num.toString();
+            console.log(str);
+            let result = [str[0]];
+            console.log(result);
+            console.log(str.length);
+            for (let i=1; i<str.length;i++){
+                if ((str[i-1]%2===0)&&(str[i] % i ===0)){
+                    result.push("-", str[i])
+                }else{
+                    result.push(str[i])
+                }
+            }
+            document.write(result.join(""));
+        }
+
+
+        function exerciseThree() {
+            let str = prompt("Nhap chu cai di");
+            let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            let result = [];
+
+            for (let i =0; i< str.length;i++){
+                if (UPPER.indexOf(str[i]) !== -1 ){
+                    result.push(str[i].toLowerCase())
+                } else if (LOWER.indexOf(str[i]) !== -1) {
+                    result.push(str[i].toUpperCase())
+                } else {
+                    result.push(str[i])
+                }
+            }
+            document.getElementById("displayThree").innerText = result.join("");
+        }
+
+    </script>
+</body>
+</html>

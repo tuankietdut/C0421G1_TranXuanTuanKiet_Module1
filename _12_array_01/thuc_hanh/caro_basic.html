@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="display"></p>
+    <button onclick="changeValue()">Change Value</button>
+
+    <script>
+        b = document.getElementById("display");
+        var array =[];
+        let data = "";
+        for (let i = 0; i < 5; i++){
+            array[i] = [0,0,0,0,0];
+        }
+
+        for (let i=0; i< 5; i++){
+            data += "<br>";
+            for (let j =0; j<5; j++){
+                data += array[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+
+
+        function changeValue() {
+            let positionX = parseInt(prompt("Nhập X"));
+            let positionY = parseInt(prompt("Nhập Y"));
+            data ="";
+            array[positionX][positionY] = "*";
+            console.log(array[positionX][positionY]);
+            for (let i =0; i<5 ; i++){
+                data += "<br>";
+                for (let j=0; j<5;j++){
+                    data += array[i][j] + "&nbsp;&nbsp;"
+                }
+            }
+            b.innerHTML = data
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <span id="result"></span>
+        <hr>
+        <button onclick="forFirstPlayer()">Đánh dấu X</button>
+        <button onclick="forSecondPlayer()">Đánh dấu O</button>
+    </div>
+    <script>
+        let array = [];
+        let display = "";
+        for (let i=0; i<7; i++){
+            array[i] = [".",".",".",".",".",".","."];
+        }
+        for (let i =0; i<7; i++){
+            for (let j=0; j<7; j++){
+                display += array[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"
+            }
+            display += "<br>"
+        }
+        document.getElementById("result").innerHTML = display ;
+
+
+        function forFirstPlayer() {
+            display = "";
+            let a = parseInt(prompt("Nhập vào giá trị row"));
+            let b = parseInt(prompt("Nhập vào giá trị colums"));
+            array[a][b] = "X";
+            for (let i =0; i<7; i++){
+                for (let j=0; j<7; j++){
+                    display += array[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"
+                }
+                display += "<br>"
+            }
+            document.getElementById("result").innerHTML = display ;
+        }
+
+
+
+        function forSecondPlayer() {
+            display = "";
+            let a = parseInt(prompt("Nhập vào giá trị row"));
+            let b = parseInt(prompt("Nhập vào giá trị colums"));
+            array[a][b] = "O";
+            for (let i =0; i<7; i++){
+                for (let j=0; j<7; j++){
+                    display += array[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;"
+                }
+                display += "<br>"
+            }
+            document.getElementById("result").innerHTML = display ;
+        }
+
+
+
+        for (let i =0; i <array.length;i++){
+            for (let j = 0; j < (array[i].length -3); j++){
+                if ((array[i][j] === "X") && (array[i][j+1] === "X") && (array[i][j+2] === "X")){
+                    alert("X win");
+                } else if ((array[i][j] === "O") && (array[i][j+1] === "O") && (array[i][j+2] === "O")){
+                    alert("O win");
+                }
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
