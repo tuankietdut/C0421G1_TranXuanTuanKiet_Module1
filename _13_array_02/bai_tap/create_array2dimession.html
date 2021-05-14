@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <div>BÀI 3 <br>
+        <button onclick="exerciseOnen()">Click này</button>
+
+    </div>
+
+
+
+<script>
+    function exerciseOnen() {
+        let row = parseInt(prompt("Nhập số mảng trong mảng 2 chiều"));
+        let myArr = new Array(row);
+
+        for (let i =0; i< myArr.length; i++){
+            let colum = parseInt(prompt("Nhập chiều dài của mảng thứ: " + i) );
+            myArr[i] = new Array(colum);
+            for (let j =0; j< myArr[i].length;j++){
+                myArr[i][j] = parseInt(prompt("Nhập giá trị của phần tử"+ i + ": " + j));
+            }
+
+        }
+        console.log(myArr);
+    }
+
+</script>
+
+
+</body>
+</html>

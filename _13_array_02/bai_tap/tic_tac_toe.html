@@ -60,12 +60,36 @@
         }
 
 
+
         function checkResult() {
             for (let i =0; i <array.length;i++){
-                for (let j = 0; j < (array[i].length -3); j++){
+                for (let j = 0; j < (array[i].length); j++){
+
+                    //Trường hợp win theo row
                     if ((array[i][j] === "X") && (array[i][j+1] === "X") && (array[i][j+2] === "X")){
                         alert("X win");
                     } else if ((array[i][j] === "O") && (array[i][j+1] === "O") && (array[i][j+2] === "O")){
+                        alert("O win");
+                    }
+
+                    // Trường hợp win theo colum
+                    if ((array[i][j] === "X") && (array[i+1][j] === "X") && (array[i+2][j] === "X")){
+                        alert("X win");
+                    }else if ((array[i][j] === "O") && (array[i+1][j] === "O") && (array[i+2][j] === "O")){
+                        alert("O win");
+                    }
+
+                    //Trường hợp win theo đường chéo \
+                    if ((array[i][j] === "X") && (array[i+1][j+1] === "X") && (array[i+2][j+2] === "X")){
+                        alert("X win");
+                    }else if ((array[i][j] === "O") && (array[i+1][j+1] === "O") && (array[i+2][j+2] === "O")){
+                        alert("O win");
+                    }
+
+                    //Trường hợp win theo đường chéo /
+                    if ((array[i][j] === "X") && (array[i+1][j-1] === "X") && (array[i+2][j-2] === "X")){
+                        alert("X win");
+                    }else if ((array[i][j] === "O") && (array[i+1][j-1] === "O") && (array[i+2][j-2] === "O")){
                         alert("O win");
                     }
                 }
@@ -73,8 +97,6 @@
         }
 
         setInterval(checkResult, 1000);
-
-
     </script>
 
 </body>

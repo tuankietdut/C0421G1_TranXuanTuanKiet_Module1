@@ -18,13 +18,39 @@
     <hr>
 
     <div>BÀI 3 <br>
+        <button onclick="exerciseThree()">Click này</button>
+        <p id="resultThree">Kiểm tra xem có bao nhiêu ký tự số trong mảng</p>
+    </div>
+    <hr>
+
+    <div>BÀI 4 <br>
+        <label for="string">Nhập chuỗi muốn đếm</label>
+        <input type="text" id="string">
+        <button onclick="exerciseFour()">Click to check</button>
+        <p id="resultFour"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <button onclick="exerciseFive()">Click to check</button>
+        <p id="resultFiveBefore"></p>
+        <p id="resultFiveAfter"></p>
 
 
     </div>
+    <hr>
 
 
+    <div>BÀI 6</div>
+        <button onclick="exerciseSix()">Click to check</button>
+        <p id="resultSixBefore"></p>
+        <p id="resultSixAfter"></p>
 
     <script>
+
+
+
+
         function exerciseOne() {
             let a = [
                 [1, 2, 1, 24],
@@ -54,6 +80,66 @@
             }
             alert("Mảng hiện tại: " +myArr)
             document.getElementById("resultTwo").innerText = myArr.reverse();
+        }
+
+
+        function exerciseThree() {
+            let a = prompt("Bạn muốn độ dài của chuỗi là bao nhiêu: ");
+            let myArr = [];
+            let count =0;
+            for (let i =0; i<a; i++){
+                myArr[i] = prompt("Nhập vào giá trị của các phần tử" );
+            }
+            for (let i =0; i< myArr.length;i++){
+                if (isNaN(myArr[i])){
+                    count++;
+                }
+            }
+            document.getElementById("resultThree").innerText = "Số ký tự số có trong mảng: " + count;
+        }
+
+
+
+        function exerciseFour() {
+            let a = document.getElementById("string").value;
+            display ="";
+            for (let i =0; i<a.length;i++){
+                display += a[i] + " ";
+            }
+        document.getElementById("resultFour").innerHTML = "Các ký tự trong chuỗi: "+ display + "<br>" + "Chuỗi gồm " + a.length + " ký tự"
+        }
+
+
+
+        function exerciseFive() {
+            while (true){
+                let a = prompt("Nhập chuỗi thứ nhất: ");
+                let b = prompt("Nhập chuỗi thứ hai: ");
+                document.getElementById("resultFiveBefore").innerHTML = "Chuỗi thứ nhất: " + a + "<br>" + "Chuỗi thứ hai: " + b;
+                if (a===b){
+                    document.getElementById("resultFiveAfter").innerText = "Hai chuỗi giống hệt nhau :V";
+                    break;
+                } else {
+                    alert("Hai chuỗi khác nhau, mời nhập lại")
+            }
+            }
+        }
+
+
+
+        function exerciseSix() {
+            let a = parseInt(prompt("Bạn muốn độ dài của chuỗi là bao nhiêu: "));
+            let myArr = new Array(a);
+            for (let i =0; i < myArr.length; i++){
+                myArr[i] = prompt("Nhập vào giá trị của các phần tử" );
+            }
+            document.getElementById("resultSixBefore").innerText = "Mảng trước khi thay thế: " + myArr;
+            for (let i =0; i<myArr.length;i++) {
+                if (myArr[i] === "-") {
+                    myArr[i] = "_";
+                }
+            }
+            document.getElementById("resultSixAfter").innerText = "Mảng sau khi thay thế: "+myArr;
         }
 
 
