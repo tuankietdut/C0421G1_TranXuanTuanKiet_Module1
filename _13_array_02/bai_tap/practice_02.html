@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <button onclick="exerciseOne()">Click to check</button>
+        <p id="resultOne">In ra các phần tử trong mảng 2 chiều</p>
+    </div>
+    <hr>
+
+    <div>BÀI 2 <br>
+        <button onclick="exerciseTwo()">Click to check</button>
+        <p id="resultTwo">In các phần tử theo thứ tự đảo ngược</p>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+
+
+    </div>
+
+
+
+    <script>
+        function exerciseOne() {
+            let a = [
+                [1, 2, 1, 24],
+                [8, 11, 9, 4],
+                [7, 0, 7, 27],
+                [7, 4, 28, 14],
+                [3, 10, 26, 7]
+            ];
+            output = "";
+
+            for (let i =0; i< a.length; i++){
+                output += "row"+ i + "<br>"
+                for (let j =0; j< a[0].length; j++){
+                    output += "'"+ a[i][j] +"'" + "<br>";
+                }
+            }
+            console.log(output);
+            document.getElementById("resultOne").innerHTML = output;
+        }
+
+
+        function exerciseTwo() {
+            let a = prompt("Bạn muốn độ dài của chuỗi là bao nhiêu: ");
+            let myArr = [];
+            for (let i =0; i<a; i++){
+                myArr[i] = prompt("Nhập vào giá trị của các phần tử" );
+            }
+            alert("Mảng hiện tại: " +myArr)
+            document.getElementById("resultTwo").innerText = myArr.reverse();
+        }
+
+
+
+    </script>
+</body>
+</html>
