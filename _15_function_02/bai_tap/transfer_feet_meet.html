@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const footToMeet = function (foot) {
+            let meet = foot * 0.305;
+            return meet;
+        }
+
+        const meetToFoot = function (meet) {
+            let foot = meet * 3.279;
+            return foot
+        }
+
+        for (let i =1; i<= 10; i++){
+            let a = footToMeet(i);
+            document.write("Giá trị ban đầu "+ i +"foot --> "+a + "meet" + "<br>")
+        }
+        for (let i =20; i<= 65;i+=5){
+            let a = meetToFoot(i);
+            document.write("Giá trị ban đầu "+ i +"meet --> "+a + "foot"+ "<br>" );
+        }
+    </script>
+</body>
+</html>

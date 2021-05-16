@@ -10,35 +10,34 @@
     <p id="result"></p>
 
     <script>
-        function exercise(){
-
-            // a = document.getElementById("translate").value;
-            // let arrayOne = ["book","dog","cat","home","vinahouse","handsome","smart","boring"];
-            // let arrayTwo = ["sách","chó","mèo","nhà","nhạc quẩy","đẹp trai","thông minh","chán nản"];
-            // for (let i =0; i< arrayOne.length;i++){
-            //     if (a === arrayOne[i]){
-            //         document.getElementById("result").innerText = arrayTwo[i];
-            //         break;
-            //     } else {
-            //         document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
-            //     }
-            // }
-            //
-
+        function exercise() {
             a = document.getElementById("translate").value;
-            let arrayOne = ["book","dog","cat","home","vinahouse","handsome","smart","boring"];
-            let arrayTwo = ["sách","chó","mèo","nhà","nhạc quẩy","đẹp trai","thông minh","chán nản"];
-            let i =0;
-            while (i < arrayOne.length){
-                if (a === arrayOne[i]){
+            let arrayOne = ["book", "dog", "cat", "home", "vinahouse", "handsome", "smart", "boring"];
+            let arrayTwo = ["sách", "chó", "mèo", "nhà", "nhạc quẩy", "đẹp trai", "thông minh", "chán nản"];
+            for (let i = 0; i < arrayOne.length; i++) {
+                if (a === arrayOne[i]) {
                     document.getElementById("result").innerText = arrayTwo[i];
                     break;
                 }
-                i++;
-                document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
             }
-
+            document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
         }
+
+        //
+        //     a = document.getElementById("translate").value;
+        //     let arrayOne = ["book","dog","cat","home","vinahouse","handsome","smart","boring"];
+        //     let arrayTwo = ["sách","chó","mèo","nhà","nhạc quẩy","đẹp trai","thông minh","chán nản"];
+        //     let i =0;
+        //     while (i < arrayOne.length){
+        //         if (a === arrayOne[i]){
+        //             document.getElementById("result").innerText = arrayTwo[i];
+        //             break;
+        //         }
+        //         i++;
+        //         document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
+        //     }
+        //
+        // }
 
 
 

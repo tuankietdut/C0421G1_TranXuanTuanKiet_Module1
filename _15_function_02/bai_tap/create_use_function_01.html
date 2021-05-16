@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+    <button onclick="alertMessage()">Hiển thị hộp thoại xin chào</button>
+    </div>
+    <hr>
+
+    <div>BÀI 2 <br>
+        <input type="number" oninput="increaseNumber(this.value)" placeholder="Nhập đối số">
+        <p id="resultTwo">Kết quả hiển thị ở đây</p>
+    </div>
+    <hr>
+
+
+    <div>BÀI 3 <br>
+        <input type="number">
+        <button onclick="exerciseThree()">Click</button>
+        <p id="resultThree"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 4 <br>
+        <button onclick="exerciseFour()">Click here</button>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <button onclick="exerciseFive()" >Click để check từ</button>
+    </div>
+
+
+    <script>
+        function alertMessage() {
+            alert("Xin chào")
+        }
+
+        function increaseNumber(num) {
+            num = parseFloat(num) + 1;
+            document.getElementById("resultTwo").innerText = "Kết quả của đối số là: " + num;
+        }
+
+
+        function exerciseThree() {
+            let a = parseInt(prompt("Nhập tham số thứ nhất: "));
+            let b = parseInt(prompt("Nhập tham số thứ hai: "));
+            function inputTwoPara(a,b) {
+                if (a > b){
+                    alert("a lớn hơn b!!");
+                } else{
+                    let c = a + b;
+                    document.getElementById("resultThree").innerText = c;
+                }
+            }
+            inputTwoPara(a,b);
+        }
+
+
+        function exerciseFour() {
+            result = 0;
+            alert(result)
+            result = addNumbers();
+            alert(result);
+            function addNumbers(){
+                let firstNum = 4;
+                let secondNum = 8;
+                let result = firstNum + secondNum;
+                return result;
+            }
+        }
+
+        function exerciseFive() {
+            let arrayOne = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            let arrayTwo = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra, Aquila", "Ursa Major"," Leo"];
+            let result = false;
+            while (true){
+                let a = prompt("Nhập tên ngôi sao");
+                for (let i =0; i< arrayOne.length; i++){
+                    if (a === arrayOne[i]){
+                        result = true;
+                        alert(arrayTwo[i]);
+                        break;
+                    }
+                }
+                if (result){
+                    break;
+                } else {
+                    alert("Không có trong chuỗi. ");
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

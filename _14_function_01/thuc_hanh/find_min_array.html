@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const findMin = function (arr) {
+            let min = arr[0];
+            for (let i =0; i < arr.length; i++){
+                if (arr[i] < min){
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+
+        const findMinAdvandce = function (arr) {
+            if (arr.length === 0){
+                return -1;
+            } else {
+                let min = arr[0];
+                let index;
+                for (let i =0; i < arr.length; i++){
+                    if (arr[i] < min){
+                        min = arr[i];
+                        index = i;
+                    }
+                }
+                return index;
+            }
+        }
+
+        arrOne = [3,5,8,7,4,-1,-5,2,0];
+        let min = findMinAdvandce(arrOne)
+        if (min !== -1){
+            alert(arrOne[min])
+        } else {
+            alert("Mảng rỗng")
+        }
+
+        arrTwo = [];
+        let minTwo = findMinAdvandce(arrTwo);
+        if (minTwo !== -1){
+            alert(arrTwo[minTwo])
+        } else {
+            alert("Mảng rỗng")
+        }
+
+
+    </script>
+</body>
+</html>

@@ -186,7 +186,7 @@
         function exerciseSeven() {
             let array= new Array(10);
             let result = false;
-            let elementDelete;
+            let index;
             for (let i =0; i < array.length;i++){
                 array[i] = parseInt(prompt("Nhập vào giá trị của các phần tử: "))
             }
@@ -194,16 +194,16 @@
             for (let i=0; i< array.length; i++){
                 if (a === array[i]) {
                     result = true;
-                    elementDelete = array[i];
+                    index = i;
                 }
             }
             if (result){
                 document.getElementById("resultSix").innerText = "V is in the array";
                 alert("Mảng ban đầu: " + array);
-                array.indexOf(elementDelete);
-                alert("Phần tử cần xóa có vị trí: " + array.indexOf(elementDelete));
-                array.splice(array.indexOf(elementDelete),1);
-                array.push(0);
+                for (let i =index; i <array.length -1; i++){
+                    array[i] = array[i+1]
+                }
+                array[array.length -1] = 0;
                 alert(array);
             }else {
                 document.getElementById("resultSix").innerText = "V is not in the array"
@@ -213,25 +213,41 @@
 
         function exerciseEight() {
             let array= new Array(10);
+            let maxAfterRound;
             for (let i =0; i < array.length;i++){
                 array[i] = parseInt(prompt("Nhập vào giá trị của các phần tử: "))
             }
-            array.sort(function (a,b) {
-                return b -a
-            })
-            document.getElementById("resultEight").innerText = array;
+            for (let i =0; i < array.length -1; i++){
+                for (let j = i+1; j<array.length;j++){
+                    if (array[j] > array[i]){
+                        maxAfterRound = array[i];
+                        array[i] = array[j];
+                        array[j] = maxAfterRound;
+                    }
+                }
+            }
+            alert(array);
         }
+
 
         function exerciseNine() {
             let arrayOne= new Array(10);
             let arrayTwo= new Array(10);
+            let arrayThree = [];
             for (let i =0; i < arrayOne.length;i++){
                 arrayOne[i] = parseInt(prompt("Nhập vào giá trị của các phần tử mảng 1: "))
             }
             for (let i =0; i < arrayTwo.length;i++){
                 arrayTwo[i] = parseInt(prompt("Nhập vào giá trị của các phần tử mảng 2: "))
             }
-            let arrayThree = arrayOne.concat(arrayTwo);
+            for (let i=0; i< arrayOne.length; i++){
+                arrayThree[i] = arrayOne[i]
+            }
+            for (let i =0; i< arrayTwo.length; i++){
+                arrayThree[arrayThree.length] = arrayTwo[i]
+            }
+            alert(arrayThree);
+            console.log(arrayThree);
             document.getElementById("resultNine").innerText = arrayThree;
         }
 

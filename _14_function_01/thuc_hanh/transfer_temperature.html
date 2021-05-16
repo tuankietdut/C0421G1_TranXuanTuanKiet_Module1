@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Temperature</h1>
+    <p>Type a value in the Fahrenheit field to convert the value to Celcius</p>
+    <label for="temperatureFah">Fahrenheit</label>
+    <input type="number" id="temperatureFah" oninput="transferTemp()">
+    <p id="result">The result will be displal here</p>
+
+    <script>
+        function transferTemp() {
+            let a = parseInt(document.getElementById("temperatureFah").value);
+            document.getElementById("result").innerText =(a - 32)/1.8;
+        }
+
+    </script>
+</body>
+</html>
