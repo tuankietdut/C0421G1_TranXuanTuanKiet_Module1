@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <button onclick="exerciseOne()">In ra các dấu *</button>
+        <p id="resultOne"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 2 <br>
+        <button></button>
+
+    </div>
+    <hr>
+
+
+    <div>BÀI 3 <br>
+        <button onclick="exerciseThree()">Chương trính tính S</button>
+        <p id="resultThree"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 4 <br>
+        <button onclick="exerciseFour()">Chương trình tính S*</button>
+        <p id="resultFour">Kết quả ở đây</p>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <button onclick="exerciseFive()">Chương trình tính S**</button>
+        <p id="resultFive"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 6 <br>
+        <button onclick="exerciseSix()">Chương trình tính n!!</button>
+        <p id="resultSix">Kết quả hiển thị ở đây</p>
+    </div>
+    <hr>
+
+    <div>BÀI 7 <br>
+        <button onclick="exerciseSeven()">Tổng và tích số nguyên dương cho trước</button>
+        <p id="resultSeven"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 8 <br>
+        <button onclick="exerciseEight()">Tìm BCNN và UCLN</button>
+        <p id="resultEight"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 9 <br>
+        <label for="string">Nhập chuỗi của bạn: </label>
+        <input type="text" id="string">
+        <button onclick="exerciseNine_1()">In ra chuỗi đảo ngược</button>
+        <button onclick="exerciseNine_2()">Đổi chuỗi đã cho sang chữ hoa</button>
+        <button onclick="exerciseNine_3()">Đổi chuỗi đã cho sang chữ thường</button>
+        <button onclick="exerciseNine_4()">Chữ hoa sang thường và ngược lại</button>
+        <p id="resultNine"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 10 <br>
+        <label for="stringTen">Nhập chuỗi của bạn: </label>
+        <input type="text" id="stringTen">
+        <button onclick="exerciseTen_1()">In mỗi từ trên mỗi dòng</button>
+        <button onclick="exerciseTen_2()">Đếm số từ có trong chuỗi đã cho</button>
+        <button onclick="exerciseTen_3()">Đưa ra bảng tần số xuất hiện các từ</button>
+        <p id="resultTen"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 11 <br>
+        <button onclick="exerciseEleven_1()">1. Nhập số nguyên dương cho mảng</button>
+        <button onclick="exerciseEleven_2()">2. Tính tổng số lương lẻ mảng a</button>
+        <button onclick="exerciseEleven_3()">3. Tính tổng các số nguyên tố ở vị trí chẵn</button>
+        <button onclick="exerciseEleven_4()">4. Kiểm tra phần tử k có trong mảng ko</button>
+        <button onclick="exerciseEleven_5()">5. Sắp xếp mảng theo thứ tự tăng dần</button>
+        <button onclick="exerciseEleven_6()">6. Chèn phần từ p vào mảng mà vẫn đảm bảo tăng dần</button>
+        <p id="resultEleven_1"></p>
+        <p id="resultEleven_2"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 12 <br>
+        <button onclick="exerciseTwenty_1()">Nhập ma trận 2 chiều</button>
+        <button onclick="exerciseTwenty_2()">Tích các số là bội số của 3 trên row 1</button>
+        <button onclick="exerciseTwenty_3()">Tạo ra mảng 1 chiều với các phần tử lớn nhất trên mỗi row</button>
+        <button onclick="exerciseTwenty_4()">Xóa phần tử đầu tiên của mảng Xi</button>
+        <p id="resultTwenty_1"></p>
+        <p id="resultTwenty_2"></p>
+    </div>
+
+    <script>
+        function exerciseOne() {
+            let a = parseInt(prompt("Nhập số dồng muốn vẽ"));
+            outputOnComputer ="";
+            for (let i =0; i<a ; i++){
+                outputOnComputer += "*****" + "<br>"
+            }
+            document.getElementById("resultOne").innerHTML = outputOnComputer;
+        }
+
+
+        function exerciseThree() {
+            let a = parseInt(prompt("Nhập n để tính tổng"));
+            let sum =0;
+            for (let i =1; i<=a; i++){
+                sum += 1/i;
+            }
+            document.getElementById("resultThree").innerText = "Tổng kết quả là: "+sum;
+        }
+
+
+        function exerciseFour() {
+            let a = parseInt(prompt("Nhập n muốn in: "));
+            let sum = 15;
+            let sumElement;
+            for (let i =1; i<=a;i++){
+                sumElement = Math.pow(-1, i);
+                for (let j=i; j>=1;j--){
+                    sumElement*= 1/j;
+                }
+                sum += sumElement;
+            }
+            document.getElementById("resultFour").innerText = "Tổng là: " + sum;
+        }
+
+
+        function exerciseFive() {
+            let a = parseInt(prompt("Nhập n muốn in"));
+            let sum =0;
+            let element;
+            let j;
+            for (let i =1; i<= a;i++){
+                element =1;
+                j =(2*i)-1;
+                for (j; j>= 1; j--){
+                    element *= j;
+                }
+                sum += 1/element;
+            }
+            document.getElementById("resultFive").innerText = "Tổng là: "+sum;
+        }
+
+
+
+        function exerciseSix() {
+            let a = parseInt(prompt("Nhập n: "));
+            let sumEven=1;
+            let sumOdd =1;
+            let i =1;
+            let b = "1";
+            let c= "1";
+            while (i<=a){
+                if (i % 2 ===0){
+                    sumEven *=i;
+                    b+=" * " + i
+                    i++;
+                } else {
+                    sumOdd *= i;
+                    c+=" * " + i
+                    i++;
+                }
+            }
+            document.getElementById("resultSix").innerHTML = "Tổng chẵn là: "+ b + " = " + sumEven +"<br>"
+                                                              + "Tổng lẻ là: " + c +" = "+ sumOdd;
+        }
+
+
+        function exerciseSeven() {
+            let a = prompt("Nhập số nguyên m: ");
+            let sum = "";
+            let multipli = "1";
+            for (let i =0; i< a.length; i++){
+                sum += "+" + a[i];
+                multipli += "*" + a[i];
+            }
+        document.getElementById("resultSeven").innerHTML = "Tổng của m: " + eval(sum) + "<br>" + "Tích của m: " + eval(multipli);
+        }
+
+        function exerciseEight() {
+            let a = parseInt(prompt("Nhập A: "));
+            let b = parseInt(prompt("Nhập B: "));
+            let ucnn;
+            let bcnn;
+            if (a>b){
+                for (let i =1;i<=b;i++){
+                    if ((a%i===0) && (b%i===0)){
+                        ucnn = i;
+                    }
+                }
+            } else {
+                for (let i =1;i<=a;i++){
+                    if ((a%i===0) &&(b%i===0)){
+                        ucnn = i;
+                    }
+                }
+            }
+            let i =1;
+            while (true){
+                if ((i%a ===0) && (i%b===0)){
+                    bcnn =i;
+                    break;
+                }
+                i++;
+            }
+            document.getElementById("resultEight").innerHTML = "Ước chung lớn nhất: " + ucnn + "<br>" + "Bội chung nhỏ nhất: " + bcnn;
+        }
+
+
+        function exerciseNine_1() {
+            let a = document.getElementById("string").value;
+            let myArr =[];
+            let factor;
+            for (let i =0; i<a.length; i++){
+                myArr[i] = a[i];
+            }
+            for (let i =0; i< myArr.length; i++){
+                if (i > myArr.length/2){
+                    break;
+                } else {
+                    factor = myArr[i];
+                    myArr[i] = myArr[myArr.length -1-i];
+                    myArr[myArr.length -1-i] = factor;
+                }
+            }
+            document.getElementById("resultNine").innerText = myArr;
+        }
+        
+
+        function exerciseNine_2() {
+            let a = document.getElementById("string").value;
+            document.getElementById("resultNine").innerText = a.toUpperCase()
+        }
+
+
+        function exerciseNine_3() {
+            let a = document.getElementById("string").value;
+            document.getElementById("resultNine").innerText = a.toLowerCase()
+        }
+        
+        function exerciseNine_4() {
+            let a = document.getElementById("string").value;
+            let myArr = Array.from(a);
+            let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let upperArray = Array.from(upperCase);
+            let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+            let index;
+            let lowerArray = Array.from(lowerCase);
+            for (let i =0; i< myArr.length; i++){
+                if (upperArray.indexOf(myArr[i]) !== -1 ){
+                    index = upperArray.indexOf(myArr[i]);
+                    myArr[i] = lowerArray[index];
+                } else if (lowerArray.indexOf(myArr[i]) !== -1){
+                    index = lowerArray.indexOf(myArr[i]);
+                    myArr[i] = upperArray[index];
+                }
+            }
+            document.getElementById("resultNine").innerText = myArr;
+        }
+
+
+        function exerciseTen_1() {
+            let a = document.getElementById("stringTen").value;
+            let arrOne = Array.from(a);
+            let display ="";
+            for (let i =0; i< arrOne.length; i++){
+                display += arrOne[i] + "<br>";
+            }
+            document.getElementById("resultTen").innerHTML = display;
+        }
+
+        function exerciseTen_2() {
+            let a = document.getElementById("stringTen").value;
+            let arrOne = Array.from(a);
+            let count =0;
+            for (let i =0; i< arrOne.length; i++){
+                if (isNaN(arrOne[i])){
+                    count++;
+                }
+            }
+            document.getElementById("resultTen").innerText = "Số lượng ký tự có trong chuỗi: " + count;
+        }
+
+        function exerciseTen_3() {
+            let a = document.getElementById("stringTen").value;
+            let arrOne = Array.from(a);
+            let count;
+            let display = "";
+            for (let i=0;i<arrOne.length; i++){
+                count =1;
+                for (let j= i+1; j< arrOne.length -1;j++){
+                    if (arrOne[i] === arrOne[j]){
+                        count++;
+                    }
+                }
+                display += "Ký tự " + arrOne[i] + " xuất hiện: " + count+ " lần!!" + "<br>"
+            }
+            document.getElementById("resultTen").innerHTML = display;
+        }
+
+        function exerciseEleven_1() {
+            let a = parseInt(prompt("Nhập chiều dài mảng a: "))
+            arrNew = new Array(a);
+            for (let i =0; i< arrNew.length; i++){
+                arrNew[i] = parseInt(prompt("Nhập phần tử thứ "+ i));
+            }
+            document.getElementById("resultEleven_1").innerText = arrNew;
+        }
+
+        function exerciseEleven_2(){
+            let sumOdd =0;
+            for (let i =0; i < arrNew.length; i++){
+                if ((arrNew[i]%2 !==0) && (arrNew[i]>0)){
+                    sumOdd += arrNew[i];
+                }
+            }
+            document.getElementById("resultEleven_2").innerText = "Tổng số dương lẻ là: "+ sumOdd;
+        }
+
+        function exerciseEleven_3() {
+            let sumPrime =0;
+            let count =0;
+            for (let i=0; i<arrNew.length; i++){
+                if (i%2 ===0){
+                    count =0;
+                    for (let j =1; j<= arrNew[i];j++){
+                        if (arrNew[i]%j ===0){
+                            count++;
+                        }
+                    }
+                    if (count === 2){
+                        sumPrime += arrNew[i]
+                    }
+                }
+
+            }
+        document.getElementById("resultEleven_2").innerText = "Tổng số nguyên tố ở vị trí chẵn: "+sumPrime;
+        }
+
+        function exerciseEleven_4() {
+            let k = parseInt(prompt("Nhập phần tử k để kiểm tra"));
+            let check = false;
+            for (let i=0; i< arrNew.length; i++){
+                if (arrNew[i]===k){
+                    alert("K có trong chuỗi"+ "-- Vị trí thứ "+ i);
+                    check = true;
+                    break;
+                }
+            }
+            if (check === false){
+                alert("K không có trong chuỗi ok!!")
+            }
+        }
+
+
+        function exerciseEleven_5() {
+            let max;
+            for (let i =0; i< arrNew.length -1; i++){
+                for (let j = i+1; j< arrNew.length; j++){
+                    if (arrNew[j]>arrNew[i]){
+                        max = arrNew[i];
+                        arrNew[i] = arrNew[j];
+                        arrNew[j] = max;
+                    }
+                }
+            }
+            document.getElementById("resultEleven_2").innerText = arrNew;
+        }
+
+
+        function exerciseEleven_6() {
+            let value = parseInt(prompt("Nhập phần từ muốn chèn vào"));
+            let b = parseInt(prompt("Nhập vị trí muốn chèn vào: "));
+            for (let i= arrNew.length -1; i>b; i--) {
+                arrNew[i + 1] = arrNew[i];
+            }
+            arrNew[b] = value;
+            exerciseEleven_5(arrNew);
+        }
+
+        function exerciseTwenty_1() {
+            let m = parseInt(prompt("Nhập số dòng m cho ma trận: "));
+            myArray = new Array(m);
+            for (let i=0; i< myArray.length;i++){
+                let n = parseInt(prompt("Nhập số cột cho ma trận: "));
+                myArray[i] = new Array(n);
+                for (let j=0; j< myArray[i].length; j++){
+                    myArray[i][j] = parseInt(prompt("Nhập giá trị cho phần tử"+i+" "+j))
+                }
+            }
+            console.log(myArray);
+            document.getElementById("resultTwenty_1").innerHTML = myArray;
+        }
+
+
+        function exerciseTwenty_2() {
+            let multipli =1;
+            for (let j=0; j<myArray[0].length;j++){
+                if ((myArray[0][j] %3 ===0) &&(myArray[0][j]!==0)){
+                    multipli *= myArray[0][j];
+                }
+            }
+            document.getElementById("resultTwenty_2").innerText = "Tích các số chia hết cho 3 trên row thứ nhất: " + multipli;
+        }
+
+        function exerciseTwenty_3() {
+            let str ="";
+            let max;
+            for (let i =0; i< myArray.length;i++){
+                max = myArray[i][0];
+                for (let j=0; j<myArray[i].length;j++){
+                    if (myArray[i][j]>max){
+                        max = myArray[i][j];
+                    }
+                }
+                str += max;
+            }
+            newArray = Array.from(str);
+            document.getElementById("resultTwenty_2").innerText = "Mảng 1 chiều mới: " + newArray;
+        }
+
+
+        function exerciseTwenty_4() {
+            for (let i =0; i<newArray.length -1;i++){
+                newArray[i]=newArray[i+1];
+            }
+            newArray.length = newArray.length -1;
+            document.getElementById("resultTwenty_2").innerText = "Mảng mới xóa ký tự đầu: "+newArray;
+        }
+    </script>
+</body>
+</html>
