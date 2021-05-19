@@ -12,15 +12,18 @@
     <script>
         function exercise() {
             a = document.getElementById("translate").value;
+            let check = false;
             let arrayOne = ["book", "dog", "cat", "home", "vinahouse", "handsome", "smart", "boring"];
             let arrayTwo = ["sách", "chó", "mèo", "nhà", "nhạc quẩy", "đẹp trai", "thông minh", "chán nản"];
             for (let i = 0; i < arrayOne.length; i++) {
                 if (a === arrayOne[i]) {
                     document.getElementById("result").innerText = arrayTwo[i];
+                    check = true;
                     break;
                 }
             }
-            document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
+            if (check === false)
+                document.getElementById("result").innerText = "Sorry, từ khóa của bạn không có trong từ điển này";
         }
 
         //

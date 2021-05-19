@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .option{
+            width: 50px;
+            background-color: greenyellow;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Add New Product</h2>
+        <input type="text" id="addProduct">
+        <button onclick="addProductToDisplay()">Add</button>
+        <p id="resultProduct"></p>
+    </div>
+
+    <div>
+        <h2>Display All Product</h2>
+        <button onclick="displayAll()">Display</button>
+        <br> <br>
+        <div id="table"></div>
+    </div>
+
+
+    <script>
+        let productArray = [];
+        let i=0;
+        function addProductToDisplay(){
+            productArray[i] = document.getElementById("addProduct").value;
+            document.getElementById("resultProduct").innerText = "Sản phẩm " + productArray[i] + " vừa mới được thêm";
+            i++
+        }
+        function displayAll(){
+            table = "<table border='2px solid black'>";
+            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
+            for (let index=0; index < productArray.length; index++){
+                table += "<tr>"
+                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
+                table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
+                table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("table").innerHTML = table;
+        }
+
+        function editElement(number) {
+            productArray[number] = prompt("Nhập tên sản phẩm mà bạn muốn sửa đổi: ");
+            table = "<table border='2px solid black'>";
+            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
+            for (let index=0; index < productArray.length; index++){
+                table += "<tr>"
+                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
+                table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
+                table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("table").innerHTML = table;
+        }
+
+        function deleteElement(number) {
+            for (let i =number; i< productArray.length; i++)
+                productArray[i] = productArray[i+1];
+            productArray.length = productArray.length -1;
+            table = "<table border='2px solid black'>";
+            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
+            for (let index=0; index < productArray.length; index++){
+                table += "<tr>"
+                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
+                table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
+                table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
+                table += "</tr>";
+            }
+            table += "</table>";
+            document.getElementById("table").innerHTML = table;
+        }
+
+
+
+    </script>
+</body>
+</html>
