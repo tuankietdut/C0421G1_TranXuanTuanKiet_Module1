@@ -15,11 +15,13 @@
             }
         }
         if (count === 1){
-            document.write(num + " Là số nguyên tố" +"<br>")
+            return true;
         }
     }
-    for ( let num =2;num < 10000; num++){
-        checkIsPrime(num)
+    for ( let num = 2;num < 10000; num++){
+        if(checkIsPrime(num)){
+            document.write(num+" Là số nguyên tố!!" + "<br>")
+        }
     }
 </script>
 </body>

@@ -18,9 +18,7 @@
 
 
     <div>BÀI 3 <br>
-        <input type="number">
-        <button onclick="exerciseThree()">Click</button>
-        <p id="resultThree"></p>
+        <button onclick="exerciseThree()">Click để chạy function</button>
     </div>
     <hr>
 
@@ -48,15 +46,18 @@
         function exerciseThree() {
             let a = parseInt(prompt("Nhập tham số thứ nhất: "));
             let b = parseInt(prompt("Nhập tham số thứ hai: "));
-            function inputTwoPara(a,b) {
-                if (a > b){
-                    alert("a lớn hơn b!!");
+            function inputTwoPara(num1,num2) {
+                if (num1 > num2){
+                    return true
                 } else{
-                    let c = a + b;
-                    document.getElementById("resultThree").innerText = c;
+                    return false;
                 }
             }
-            inputTwoPara(a,b);
+            if (inputTwoPara(a,b)){
+                alert("a lớn hơn b!!!")
+            }else {
+                alert(a+b +": là tổng của hai số!! ")
+            }
         }
 
 
@@ -76,21 +77,23 @@
         function exerciseFive() {
             let arrayOne = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
             let arrayTwo = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra, Aquila", "Ursa Major"," Leo"];
-            let result = false;
-            while (true){
-                let a = prompt("Nhập tên ngôi sao");
+            let a = prompt("Nhập tên ngôi sao");
+            let index;
+            function findInArray(param){
                 for (let i =0; i< arrayOne.length; i++){
-                    if (a === arrayOne[i]){
-                        result = true;
-                        alert(arrayTwo[i]);
+                    if (param === arrayOne[i]){
+                        index = i;
+                        return true;
                         break;
+                    }else {
+                        return false;
                     }
                 }
-                if (result){
-                    break;
-                } else {
-                    alert("Không có trong chuỗi. ");
-                }
+            }
+            if (findInArray(a)){
+                alert(arrayTwo[index]);
+            } else {
+                alert("Không có trong chuỗi");
             }
         }
 
