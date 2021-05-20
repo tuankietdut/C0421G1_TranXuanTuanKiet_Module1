@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canv" style="border: 1px solid #d3d3d3" width="1368px" height="768px"></canvas>
+
+<script>
+    function Rectangle(height, width) {
+        this.height = height;
+        this.width = width;
+        this.area = function () {
+            return this.height * this.width
+        }
+        this.circum = function () {
+            return (this.height + this.width) * 2
+        }
+        this.display = function () {
+            let canva = document.getElementById("canv").getContext("2d");
+            canva.fillRect(200,200,this.width,this.height)
+        }
+    }
+
+    let rectangle = new Rectangle(20,45);
+    rectangle.display();
+    let area = rectangle.area();
+    console.log(area);
+    let circum = rectangle.circum();
+    console.log(circum);
+
+
+</script>
+</body>
+</html>
