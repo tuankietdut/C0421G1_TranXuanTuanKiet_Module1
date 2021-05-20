@@ -23,67 +23,43 @@
 
     <div>
         <h2>Display All Product</h2>
-        <button onclick="displayAll()">Display</button>
         <br> <br>
         <div id="table"></div>
     </div>
-
-
     <script>
-        let productArray = [];
-        let i=0;
-        function addProductToDisplay(){
-            productArray[i] = document.getElementById("addProduct").value;
-            document.getElementById("resultProduct").innerText = "Sản phẩm " + productArray[i] + " vừa mới được thêm";
-            i++
-        }
-        function displayAll(){
+        function displayModel(arrModel) {
             table = "<table border='2px solid black'>";
-            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
-            for (let index=0; index < productArray.length; index++){
+            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ arrModel.length + " product " + "</th>"  +"</tr>";
+            for (let index=0; index < arrModel.length; index++){
                 table += "<tr>"
-                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
+                table += "<td width='160px'>" + index + "." + arrModel[index] +"</td>";
                 table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
                 table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
                 table += "</tr>";
             }
             table += "</table>";
             document.getElementById("table").innerHTML = table;
+        }
+
+        let productArray = ["Sony","Xperia"];
+        displayModel(productArray);
+
+        function addProductToDisplay(){
+            productArray[productArray.length] = document.getElementById("addProduct").value;
+            displayModel(productArray);
         }
 
         function editElement(number) {
             productArray[number] = prompt("Nhập tên sản phẩm mà bạn muốn sửa đổi: ");
-            table = "<table border='2px solid black'>";
-            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
-            for (let index=0; index < productArray.length; index++){
-                table += "<tr>"
-                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
-                table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
-                table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.getElementById("table").innerHTML = table;
+            displayModel(productArray);
         }
 
         function deleteElement(number) {
             for (let i =number; i< productArray.length; i++)
                 productArray[i] = productArray[i+1];
             productArray.length = productArray.length -1;
-            table = "<table border='2px solid black'>";
-            table += "<tr>" + "<th colspan='2' style='text-align: left'>" + "ProductName" + "</th>" +"<th width='70px'>"+ productArray.length + " product " + "</th>"  +"</tr>";
-            for (let index=0; index < productArray.length; index++){
-                table += "<tr>"
-                table += "<td width='160px'>" + index + "." + productArray[index] +"</td>";
-                table += "<td width='60px'>" + "<input type='button' value='edit' class='option' onclick='editElement(" + index + ")'>" + "</td>";
-                table += "<td>" + "<input type='button' value='delete' class='option' onclick='deleteElement(" + index + ")'>" + "</td>";
-                table += "</tr>";
-            }
-            table += "</table>";
-            document.getElementById("table").innerHTML = table;
+            displayModel(productArray);
         }
-
-
 
     </script>
 </body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function creatDate(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function () {
+            return this.day
+        }
+        this.getMonth = function () {
+            return this.month
+        }
+        this.getYear = function () {
+            return this.year
+        }
+        this.setDay = function (day) {
+            this.day = day
+        }
+        this.setMonth = function (month) {
+            this.month = month
+        }
+        this.setYear = function (year) {
+            this.year = year
+        }
+        this.setDate = function (day,month,year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        this.toString = function () {
+            alert( this.day +"/" + this.month + "/"+ this.year)
+        }
+    }
+    const myDate = new creatDate(10,5,1997);
+    let day = myDate.getDay();
+    let month = myDate.getMonth();
+    let year = myDate.getYear();
+    alert(day +"/"+ month + "/"+ year);
+    myDate.setDay(10);
+    myDate.setMonth(10);
+    myDate.setYear(2021);
+    let dayNew = myDate.getDay();
+    let monthNew = myDate.getMonth();
+    let yearNew = myDate.getYear();
+    alert(dayNew +"/"+ monthNew + "/"+ yearNew);
+    myDate.setDate(19,5,2021);
+    console.log(myDate.toString());
+
+
+
+    // let user = {
+    //     name: "Tuấn kiệt",
+    //     age: 35,
+    //     height: 168,
+    //     hobby: ["readbook","play football","watch movie","listen music"],
+    //     run: function () {
+    //         console.log("Hello Word")
+    //     }
+    // }
+    // user.run();
+    // console.log(user.name);
+
+
+</script>
+</body>
+</html>
