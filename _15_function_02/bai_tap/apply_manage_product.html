@@ -45,20 +45,36 @@
         displayModel(productArray);
 
         function addProductToDisplay(){
-            productArray[productArray.length] = document.getElementById("addProduct").value;
-            displayModel(productArray);
+            let nameProduct = document.getElementById("addProduct").value;
+            if (nameProduct!==""){
+                productArray[productArray.length] = nameProduct;
+                displayModel(productArray);
+                document.getElementById("addProduct").value = "";
+            } else {
+                alert("Mời nhập sản phẩm vào: ")
+            }
         }
 
         function editElement(number) {
-            productArray[number] = prompt("Nhập tên sản phẩm mà bạn muốn sửa đổi: ");
+            let a;
+            while (true){
+                a = prompt("Nhập tên sản phẩm mà bạn muốn sửa đổi: ");
+                if (a!==""){
+                    break;
+                }
+                alert("Mời nhập lại dữ liệu: ")
+            }
+            productArray[number] = a;
             displayModel(productArray);
         }
 
         function deleteElement(number) {
-            for (let i =number; i< productArray.length; i++)
-                productArray[i] = productArray[i+1];
-            productArray.length = productArray.length -1;
-            displayModel(productArray);
+            if (confirm("Bạn muốn xóa product này không?")){
+                for (let i =number; i< productArray.length; i++)
+                    productArray[i] = productArray[i+1];
+                productArray.length = productArray.length -1;
+                displayModel(productArray);
+            }
         }
 
     </script>

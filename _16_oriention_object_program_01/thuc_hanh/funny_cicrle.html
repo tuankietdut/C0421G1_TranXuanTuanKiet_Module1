@@ -31,7 +31,6 @@
         let y = Math.floor(Math.random()*window.innerHeight);
         let x = Math.floor(Math.random()*window.innerWidth);
         let circle = new Cirle(x,y,radius);
-        canv.beginPath();
         canv.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);
         canv.fillStyle = color;
         canv.fill()

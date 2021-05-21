@@ -7,65 +7,66 @@
 <body>
 <script>
 
-    function creatDate(day, month, year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.getDay = function () {
-            return this.day
-        }
-        this.getMonth = function () {
-            return this.month
-        }
-        this.getYear = function () {
-            return this.year
-        }
-        this.setDay = function (day) {
-            this.day = day
-        }
-        this.setMonth = function (month) {
-            this.month = month
-        }
-        this.setYear = function (year) {
-            this.year = year
-        }
-        this.setDate = function (day,month,year) {
+    class CreatDate {
+        constructor(day,month,year) {
             this.day = day;
             this.month = month;
             this.year = year;
         }
-        this.toString = function () {
-            alert( this.day +"/" + this.month + "/"+ this.year)
+        getDay (){
+            return this.day;
+        }
+        getMonth (){
+            return this.month;
+        }
+        getYear (){
+            return this.year;
+        }
+        setDay (day){
+            this.day = day;
+        }
+        setMonth (month){
+            this.month = month;
+        }
+        setYear(year){
+            this.year= year;
+        }
+        setDate(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        toStringDate(){
+            console.log(this.day+"/"+this.month+"/"+this.year);
         }
     }
-    const myDate = new creatDate(10,5,1997);
+
+    let myDate = new CreatDate(10,10,2005);
     let day = myDate.getDay();
+    console.log(day);
     let month = myDate.getMonth();
+    console.log(month);
     let year = myDate.getYear();
-    alert(day +"/"+ month + "/"+ year);
-    myDate.setDay(10);
+    console.log(year);
+
+    myDate.setDay(25);
     myDate.setMonth(10);
-    myDate.setYear(2021);
-    let dayNew = myDate.getDay();
-    let monthNew = myDate.getMonth();
-    let yearNew = myDate.getYear();
-    alert(dayNew +"/"+ monthNew + "/"+ yearNew);
-    myDate.setDate(19,5,2021);
-    console.log(myDate.toString());
+    myDate.setYear(1995);
+
+    day = myDate.getDay();
+    console.log(day);
+
+    month = myDate.getMonth();
+    console.log(month);
+
+    year = myDate.getYear();
+    console.log(year);
+
+    myDate.setDate(5,12,2021);
+    myDate.toStringDate();
 
 
 
-    // let user = {
-    //     name: "Tuấn kiệt",
-    //     age: 35,
-    //     height: 168,
-    //     hobby: ["readbook","play football","watch movie","listen music"],
-    //     run: function () {
-    //         console.log("Hello Word")
-    //     }
-    // }
-    // user.run();
-    // console.log(user.name);
 
 
 </script>

@@ -8,27 +8,30 @@
 <canvas id="canv" style="border: 1px solid #d3d3d3" width="1368px" height="768px"></canvas>
 
 <script>
-    function Rectangle(height, width) {
-        this.height = height;
-        this.width = width;
-        this.area = function () {
-            return this.height * this.width
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
         }
-        this.circum = function () {
-            return (this.height + this.width) * 2
+        area(){
+            return this.height*this.width
         }
-        this.display = function () {
+        circum(){
+            return 2*(this.width+this.height)
+        }
+        display(){
             let canva = document.getElementById("canv").getContext("2d");
-            canva.fillRect(200,200,this.width,this.height)
+            canva.fillStyle = "grey";
+            canva.fillRect(300,300,this.width,this.height);
         }
     }
-
-    let rectangle = new Rectangle(20,45);
-    rectangle.display();
-    let area = rectangle.area();
+    let recTangLe = new Rectangle(25,40);
+    recTangLe.display();
+    let area= recTangLe.area();
     console.log(area);
-    let circum = rectangle.circum();
+    let circum = recTangLe.circum();
     console.log(circum);
+
 
 
 </script>

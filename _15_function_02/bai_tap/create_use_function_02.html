@@ -73,12 +73,12 @@
 
         function exerciseTwo_1() {
             let a = document.getElementById("numberTestTwo").value;
-            document.getElementById("resultTwo").innerText = 2*3.14*parseInt(a) + " là chu vi của hình tròn";
+            document.getElementById("resultTwo").innerText = 2*Math.PI*parseInt(a) + " là chu vi của hình tròn";
         }
 
         function exerciseTwo_2() {
             let a = document.getElementById("numberTestTwo").value;
-            document.getElementById("resultTwo").innerText = 3.14* (parseInt(a)**2) + " là diện tích của hình tròn";
+            document.getElementById("resultTwo").innerText = Math.PI* (parseInt(a)**2) + " là diện tích của hình tròn";
         }
 
         function exerciseThree(num) {
@@ -93,10 +93,11 @@
         }
 
         function exerciseFour(letter) {
-            if (isNaN(letter))
-                document.getElementById("resultFour").innerText = "False"
-            else
-                document.getElementById("resultFour").innerText =  "True"
+            if (isNaN(letter)){
+                document.getElementById("resultFour").innerText = "False";
+            } else{
+                document.getElementById("resultFour").innerText =  "True";
+            }
         }
 
         function exerciseFive() {
@@ -104,12 +105,15 @@
             let b = parseInt(prompt("Nhập số thứ hai: "));
             let c = parseInt(prompt("Nhập số thứ ba: "));
             function findMin(a,b,c) {
-                if ((a<b)&&(a<c))
+                if ((a<b)&&(a<c)){
                     document.getElementById("resultFive").innerText =a+" nhỏ nhất";
-                else if (b>c)
+                }
+                else if (b>c){
                     document.getElementById("resultFive").innerText = c+" nhỏ nhất";
-                else
+                }
+                else{
                     document.getElementById("resultFive").innerText = b+" nhỏ nhất";
+                }
             }
             findMin(a,b,c);
         }
@@ -117,24 +121,26 @@
         function exerciseSix(num) {
             let value = parseInt(num);
             function checkInt(value) {
-                if (value > 0)
-                    document.getElementById("resultSix").innerText = "True"
-                else
-                    document.getElementById("resultSix").innerText = "False"
+                if (value > 0){
+                    document.getElementById("resultSix").innerText = "True";
+                } else{
+                    document.getElementById("resultSix").innerText = "False";
+                }
             }
            checkInt(value); 
         }
 
         function exerciseSeven() {
-            let a = [5];
-            let b = [3];
-            function changeIndex(num1,num2) {
-                let tepm = num1[0];
-                num1[0] = num2[0];
-                num2[0] = tepm;
+            let a = parseInt(prompt("Nhập a: "));
+            let b = parseInt(prompt("Nhập b: "));
+            let arrTest= [a,b];
+            function changeIndex(myArry) {
+                let tepm = myArry[0];
+                myArry[0] = myArry[1];
+                myArry[1] = tepm;
             }
-            changeIndex(a,b);
-            document.getElementById("resultSeven").innerHTML = "Số thứ nhất: " + a + "<br>" + "Số thứ hai: " + b;
+            changeIndex(arrTest);
+            document.getElementById("resultSeven").innerHTML = "Số thứ nhất: " + arrTest[0] + "<br>" + "Số thứ hai: " + arrTest[1];
         }
 
         function exerciseEight() {
@@ -143,10 +149,11 @@
                 let myArray = new Array(num);
                 for (let i =0; i<myArray.length; i++)
                     myArray[i] = parseInt(prompt("Nhập giá trị của phần tử thứ: "+i));
+                myArray.reverse();
+                document.getElementById("resultEight").innerText = myArray + ": là chuỗi sau khi được đảo"
             }
             createArray(a);
-            document.getElementById("resultEight").innerText = myArray.reverse() + ": là chuỗi sau khi được đảo"
-
+            
         }
 
         function exerciseNine_1(letter) {
@@ -159,10 +166,11 @@
                     check = true;
                 }
             }
-            if (check)
+            if (check){
                 document.getElementById("resultNine").innerText = "Có ký tự trong mảng" + " và tần số xuất hiện của ký tự: "+count;
-            else
+            } else{
                 document.getElementById("resultNine").innerText = "Không có ký  tự này trong mảng";
+            }
         }
 
 

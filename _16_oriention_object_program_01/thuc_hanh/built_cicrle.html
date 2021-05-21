@@ -6,22 +6,32 @@
 </head>
 <body>
     <script>
-        function creatCicrle(radius, color) {
-            this.radius = radius;
-            this.color = color;
-            this.getRadius = function () {
-                return radius;
+        class CreatCicrle {
+            constructor(radius,color) {
+                this.radius = radius;
+                this.color = color;
             }
-            this.getArea = function () {
-                return Math.PI*Math.pow(radius,2)
+            Circle(){
+
+            }
+            getRadius(){
+                return this.radius;
+            }
+            getArea(){
+                return Math.pow(this.radius,2)*Math.PI
             }
         }
 
-        const circleEx = new creatCicrle(10.21,"green");
-        let radius = circleEx.getRadius();
-        let area = circleEx.getArea();
-        document.write("Bán kính của vòng tròn: " + radius +"<br>"+ "Diện tích hình tròn: "+ area);
-        alert(circleEx.color);
+        let cicrleTest = new CreatCicrle(30,"green");
+
+        let radius = cicrleTest.getRadius();
+        console.log(radius);
+
+        let area = cicrleTest.getArea();
+        console.log(area);
+
+
+
 
     </script>
 </body>

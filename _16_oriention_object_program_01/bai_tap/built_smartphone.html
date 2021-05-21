@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(levelPower) {
+            this.levelPower = levelPower;
+            this.status = "off";
+            this.message ="";
+            this.arryOnText =[];
+            this.arryReceive=[];
+            this.arrySend=[];
+        }
+        checkStatus(){
+            if (this.status === "on")
+                console.log("Điện thoại đang mở");
+            else
+                console.log("Điện thoại đang tắt");
+            this.levelPower--;
+        }
+        turnMobile(status){
+            if (status ==="on")
+                this.status = "on";
+            else
+                this.status = "off";
+            this.levelPower--;
+        }
+        chargePower(){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+                if (this.levelPower<100)
+                    this.levelPower = 100;
+                console.log("Pin được sạc đầy: "+ this.levelPower);
+            }
+        }
+        setMessage(message){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+                this.message = message;
+                this.levelPower--;
+            }
+        }
+        sendMessage(message, mobie){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng")
+            else {
+                mobie.setMessage(message);
+                mobie.arryReceive.push(message);
+                this.arrySend.push(message);
+                this.levelPower--;
+            }
+        }
+        creatMessage(message){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+            this.arryOnText.push(message);
+            this.levelPower--;
+            }
+        }
+        checkReceiveMessage(){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+                this.levelPower--;
+                return this.arryReceive;
+            }
+        }
+        checkSendMessage(){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+                this.levelPower--;
+                return this.arrySend;
+            }
+        }
+        checkWaitMessage(){
+            if (this.status ==="off")
+                console.log("Vui lòng mở máy trước khi sử dụng");
+            else {
+                this.levelPower--;
+                return this.arryOnText;
+            }
+        }
+    }
+
+    let samsung = new Mobile(35);
+    let iphone = new Mobile(50);
+    iphone.checkStatus();
+    iphone.turnMobile("on");
+    iphone.checkStatus();
+    samsung.turnMobile("on");
+
+    iphone.sendMessage("Heloo samsung, this mess from iphone", samsung);
+    console.log(iphone.checkSendMessage());
+    console.log(samsung.checkReceiveMessage());
+
+
+    // iphone.turnMobile("on");
+    // iphone.sendMessage("Heloo samsung, this mess from iphone", samsung);
+    // console.log(iphone.levelPower);
+    // console.log(samsung.checkReceiveMessage());
+    // // console.log(iphone.checkSend());
+    // console.log(iphone.checkSendMessage());
+    // console.log(iphone.levelPower);
+
+</script>
+
+</body>
+</html>
