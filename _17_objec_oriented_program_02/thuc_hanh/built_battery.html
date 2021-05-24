@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+        getEnergy(){
+            return this.energy ;
+        }
+        decreaseEnergy(){
+            if (this.energy >0)
+                this.energy--;
+        }
+    }
+
+
+    class FlashLamp{
+        constructor(cell) {
+            this.cell = cell;
+        }
+        getBatteryInfo(){
+            return this.cell.getEnergy();
+        }
+        setBattery(newBattery){
+            this.cell = newBattery;
+        }
+        light(){
+            if (this.cell.getEnergy()===0) return "Hết pin vui lòng sạc";
+            if (this.status){
+                this.cell.decreaseEnergy();
+                return "Lighting";
+            }else {
+                this.cell.decreaseEnergy();
+                return "Not lighting";
+            }
+        }
+        turnOn(){
+            this.status = true;
+            this.cell.decreaseEnergy();
+        }
+        turnOff(){
+            this.status= false;
+        }
+    }
+
+    let battery = new Battery(2);
+    let flashLamp = new FlashLamp(battery);
+    document.write("Tình trạng pin: " +flashLamp.getBatteryInfo() + "<br>");
+
+    flashLamp.turnOn();
+    document.write(flashLamp.light()+ "<br>" );
+    document.write("Tình trạng pin: " +flashLamp.getBatteryInfo()+ "<br>");
+
+    flashLamp.turnOff();
+    document.write(flashLamp.light()+ "<br>" );
+    document.write("Tình trạng pin: " +flashLamp.getBatteryInfo()+ "<br>");
+
+</script>
+</body>
+</html>

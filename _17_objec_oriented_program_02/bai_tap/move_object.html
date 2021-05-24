@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="doPacman()">
+    <div id="game"></div>
+
+    <script>
+        class Pacman{
+            constructor(x,y,size, speed) {
+                this.img = "https://th.bing.com/th/id/OIP.KOgeHGO-fvGFSaEPCIVqJwHaII?pid=ImgDet&rs=1";
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.speed = speed;
+            }
+            updateElement(){
+                return '<img width="' + this.size + '"' +
+                        'src="' + this.img + '"' +
+                        'style="top: ' + this.y + 'px; left: '+ this.x + 'px; position:absolute" />';
+            }
+            moveRight(){
+                this.x += this.speed;
+                console.log("Pacman move"+ this.x);
+            }
+            moveDown(){
+                this.y+= this.speed;
+            }
+            moveUp(){
+                this.y -= this.speed;
+            }
+            moveLeft(){
+                this.x-= this.speed;
+            }
+        }
+        let pacmanTest = new Pacman(20,30,160,30);
+
+        function moveOption(num){
+            switch (num.keyCode) {
+                case 37:
+                    pacmanTest.moveLeft();
+                    document.getElementById("game").innerHTML = pacmanTest.updateElement();
+                    break;
+                case 38:
+                    pacmanTest.moveUp();
+                    document.getElementById("game").innerHTML = pacmanTest.updateElement();
+                    break;
+                case 39:
+                    pacmanTest.moveRight();
+                    document.getElementById("game").innerHTML = pacmanTest.updateElement();
+                    break;
+                case 40:
+                    pacmanTest.moveDown();
+                    document.getElementById("game").innerHTML = pacmanTest.updateElement();
+                    break;
+            }
+        }
+
+        function doPacman() {
+            document.getElementById("game").innerHTML = pacmanTest.updateElement();
+            window.addEventListener("keydown", moveOption);
+        }
+
+
+
+
+    </script>
+</body>
+</html>

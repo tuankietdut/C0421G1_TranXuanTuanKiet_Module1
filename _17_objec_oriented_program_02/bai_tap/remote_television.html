@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(id) {
+                this.id = id;
+            }
+            switchChannel(channelsRemote,television){
+                television.channels = channelsRemote;
+            }
+            controlVolum(volumRemote, television){
+                television.volum += volumRemote;
+            }
+            controlStatus (status,television){
+                television.status = status;
+                if (television.status==="on"){
+                    return "Tivi đã được bật"
+                } else {
+                    return "Tivi đã tắt"
+                }
+            }
+        }
+
+        class Television{
+            constructor(channels, volum, status) {
+                this.channels = channels;
+                this.volum = volum;
+                this.status = status;
+            }
+            swiftChannelOnTV(chanelAnuthing){
+                this.channels = chanelAnuthing;
+            }
+            controlVolumOnTV(number){
+                this.volum += number;
+            }
+        }
+
+        let remoteSony = new Remote(1100);
+        let sonyTele = new Television(3, 20, "off");
+
+        sonyTele.status = "on";
+        sonyTele.channels = 7;
+
+        console.log("Kênh hiện tại của tivi: "+ sonyTele.channels);
+        remoteSony.switchChannel(3,sonyTele);
+        console.log("Kênh sau khi sử dụng remote: "+ sonyTele.channels);
+
+        console.log("Volum khi chưa sử dụng remote: "+sonyTele.volum);
+        remoteSony.controlVolum(2, sonyTele);
+        console.log("Volum hiện tại của ti vi: " + sonyTele.volum);
+
+
+        console.log(remoteSony.controlStatus("off", sonyTele));
+
+
+    </script>
+</body>
+</html>

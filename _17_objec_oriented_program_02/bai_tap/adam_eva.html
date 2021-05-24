@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor() {
+                this.weight = 10;
+            }
+            decreaseWeight(){
+                this.weight--;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            isEmpty(){
+                if (this.weight > 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        class Human{
+            constructor(name,genger,weight) {
+                this.name = name;
+                this.gender = "";
+                this.weight = weight;
+            }
+            isMale() {
+                if (this.gender === "Male") {
+                    console.log("Yes, its Male")
+                } else {
+                    console.log("Its Female")
+                }
+            }
+            checkApple(fruit){
+                    if (fruit.isEmpty()){
+                        document.write(this.name +" nói có thể ăn"+"<br>");
+                    }else {
+                        document.write(this.name +" nói táo đã hết rồi"+"<br>");
+                    }
+                }
+            eat(fruit){
+                    this.weight++;
+                    fruit.decreaseWeight();
+                }
+            talk(someThing){
+                    console.log(someThing);
+                }
+            getName(){
+                    return this.name;
+                }
+            getGender(){
+                    return this.gender;
+                }
+        }
+
+
+        let tao = new Apple();
+        let adam= new Human("Adam", "Male", 60);
+        let eva = new Human("Eva","Female", 45);
+        while (true){
+            if (tao.isEmpty()){
+                document.write("Táo vẫn còn")
+            } else {
+                document.write("Hết táo rồi")
+            }
+            adam.checkApple(tao);
+            adam.eat(tao);
+            eva.eat(tao);
+            if (tao.getWeight()===0){
+                break;
+            }
+        }
+        if (tao.isEmpty()){
+            document.write("Táo vẫn còn")
+        } else {
+            document.write("Hết táo rồi")
+        }
+
+    </script>
+</body>
+</html>
