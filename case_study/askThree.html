@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀi 1 <br>
+        <button onclick="exerciseOne()">Xây dựng mảng b là prefix sum</button>
+    </div>
+    <hr>
+    <div>BÀI 2 <br>
+        <button onclick="exerciseTwo()">Tìm phần tử xuất hiện trong mảng B mà không xuất hiện trong mảng A</button>
+        <p>Mảng A = [1,5,7,8,6,1,2,5,4,7]</p>
+        <p>Mảng B = [5,4,8,1,3,2,4,0,2,10,45]</p>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+        <button onclick="exerciseThree()">Tìm phân số lớn nhất</button>
+        <p>Mảng 1: a = [4,5,7,1,6]</p>
+        <p>Mảng 2: b = [5,4,8,2,6]</p>
+    </div>
+    <hr>
+
+    <div>BÀI 4 <br>
+        <label for="inputNumber">Nhập số để thử</label>
+        <input type="number" id="inputNumber" onchange="exerciseFour()">
+        <p id="resultFour"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 5 <br>
+        <table>
+            <tr>
+                <th>Tên đồ uống</th>
+                <th>Mã số để order</th>
+            </tr>
+            <tr>
+                <td>Cafe</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Nước Cam Vắt</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Nước ép cà rốt</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Nước ép cà chua</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Nước lọc</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Nước dừa</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td colspan="2">Thoát gọi món. Phím 7</td>
+            </tr>
+        </table>
+        <button onclick="exerciseFive()" >Nhấn để gọi món</button>
+    </div>
+    <script>
+        function exerciseOne() {
+            let a = [1,3,4,5,6,7,2,3];
+            let b =[5,4,8,1,3,2,4,0,2,10,45];
+            let sum=0;
+            for (let i=0; i<a.length;i++){
+                sum =0;
+                for (let j=0;j<=i;j++){
+                    sum +=  a[j];
+                }
+                b[i] = sum;
+            }
+            console.log(a);
+            console.log(b);
+        }
+
+        function exerciseTwo() {
+            let a = [1,5,7,8,6,1,2,5,4,7];
+            let b = [5,4,8,1,3,2,4,0,2,10,45];
+            let c =[];
+            let check;
+            for (let i=0;i<b.length;i++){
+                check = true;
+                for (let j=0;j<a.length;j++){
+                    if (b[i]===a[j]){
+                        check = false;
+                        break;
+                    }
+                }
+               if (check) {
+                   c.push(b[i]);
+               }
+            }
+            console.log(c);
+        }
+
+        function exerciseThree() {
+            let a = [4,5,7,1,6];
+            let b = [5,4,8,2,6];
+            let max = a[0]/b[0];
+            let index;
+            for (let i=1; i<a.length;i++){
+                if (a[i]/b[i]>max){
+                    max = a[i]/b[i];
+                    index =i;
+                }
+            }
+            console.log("Chỉ số lớn nhất là: "+ index+ " có giá trị: "+ a[index]/b[index])
+        }
+
+        function exerciseFour() {
+            let a = parseInt(document.getElementById("inputNumber").value);
+            let arrLetter = ["một","hai","ba","bốn","năm","sáu","bảy","tám","chín","zero"];
+            let arrNumber = [1,2,3,4,5,6,7,8,9,0];
+            let check = false;
+            let index;
+            for (let i=0; i<arrNumber.length;i++){
+                if (a===arrNumber[i]){
+                    check = true;
+                    index = i;
+                    break;
+                }
+            }
+            if (check){
+                document.getElementById("resultFour").innerText = arrLetter[index];
+            } else {
+                document.getElementById("resultFour").innerText = "Chỉ nhập 1 số thôi please";
+            }
+        }
+
+        function exerciseFive() {
+            let a;
+            do {
+                a = parseInt(prompt("Nhập mã đồ uống bạn muốn: "));
+                let x,y,z,b;
+                switch (a) {
+                    case 7:
+                        break;
+                    case 1:
+                        alert("10k 1 ly cafe");
+                        x =10;
+                        b = parseInt(prompt("Nhập số lượng muốn order: "));
+                        alert("Tổng tiền mà bạn thanh toán:"+ b*x);
+                        break;
+                    case 5:
+                        z=5;
+                        alert("Nước suối 5k: ");
+                        b = parseInt(prompt("Nhập số lượng muốn order: "));
+                        alert("Tổng tiền mà bạn thanh toán:"+ b*z);
+                        break;
+                    default:
+                        alert("15k 1 ly ");
+                        y=15;
+                        b = parseInt(prompt("Nhập số lượng muốn order: "));
+                        alert("Tổng tiền mà bạn thanh toán:"+ b*y);
+                        break;
+                }
+                } while (a!==7);
+
+        }
+    </script>
+</body>
+</html>

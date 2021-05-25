@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <label for="letter">Chuyển hóa xâu ký tự</label>
+        <input type="text" id="letter" onchange="exerciseOne()">
+        <p id="result"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 2 <br>
+        <label for="letterTwo">Đếm số lượng kí tự khác nhau trong sâu đó</label>
+        <input type="text" id="letterTwo" onchange="exerciseTwo()">
+        <p id="resultTwo"></p>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+        <label for="letterThree_1">NHập sâu 1</label>
+        <input type="text" id="letterThree_1">
+        <label for="letterThree_2">Nhập sâu 2</label>
+        <input type="text" id="letterThree_2" onchange="exerciseThree()" >
+        <p id="resultThree"></p>
+
+    </div>
+
+    <script>
+        function exerciseOne() {
+            let arrMine = [];
+            let a= document.getElementById("letter").value;
+            let result = a.split(" ");
+            let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let upperArray = Array.from(upperCase);
+            let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+            let lowerArray = Array.from(lowerCase);
+            let index;
+            for (let i=0;i<result.length;i++){
+                if (result[i].length>1){
+                    arrMine.push(result[i]);
+                }
+            }
+            for (let i=0;i<arrMine.length;i++){
+                let b = arrMine[i].split("");
+                for (let j=0;j<b.length;j++){
+                    if (j===0){
+                        if (lowerArray.indexOf(b[j]) !== -1){
+                            index = lowerArray.indexOf(b[j]);
+                            b[j] = upperArray[index];
+                        }
+                    } else {
+                        if (upperArray.indexOf(b[j]) !==-1){
+                            index = upperArray.indexOf(b[j]);
+                            b[j] = lowerArray[index];
+                    }
+                }
+                arrMine[i] = b.join("");
+            }
+        }
+            let max = arrMine[0].length;
+            let indexMax =0;
+            for (let i=1; i<arrMine.length;i++){
+                if (arrMine[i].length>max){
+                    max = arrMine[i].length;
+                    indexMax = i;
+                }
+            }
+            document.getElementById("result").innerHTML = "Kí tự dài nhất trong chuỗi: "+ arrMine[indexMax] + "<br>" + arrMine.join(" ") ;
+        }
+
+
+        function exerciseTwo() {
+            let a = document.getElementById("letterTwo").value;
+            let arrMine = Array.from(a);
+            let count;
+            let num =0;
+            let display = ""
+            for (let i=0; i<arrMine.length ;i++){
+                count = 0;
+                for (let j=i+1;j<arrMine.length;j++){
+                    if (arrMine[i]===arrMine[j]){
+                        count++;
+                    }
+                }
+                if (count===0){
+                    display += arrMine[i] + "||";
+                    num++;
+                }
+            }
+            document.getElementById("resultTwo").innerText = "Có "+ num + " ký tự khác nhau trong chuỗi: " + display;
+        }
+
+        function exerciseThree() {
+            let a= document.getElementById("letterThree_1").value;
+            let b= document.getElementById("letterThree_2").value;
+            let arrOne = Array.from(a);
+            let arrTwo = Array.from(b);
+            let arrThree = [];
+            let count;
+            let display = "";
+            for (let i=0;i<arrOne.length;i++){
+                for (let j=0;j<arrTwo.length;j++){
+                    if (arrOne[i]===arrTwo[j]){
+                        arrThree.push(arrOne[i]);
+                    }
+                }
+            }
+            for (let i=0;i<arrThree.length;i++){
+                count =0;
+                for (let j= i +1; j<arrThree.length;j++){
+                    if (arrThree[i]===arrThree[j]){
+                        count++;
+                    }
+                }
+                if (count===0){
+                    display += arrThree[i] + "||";
+                }
+            }
+            document.getElementById("resultThree").innerText = display;
+        }
+    </script>
+</body>
+</html>

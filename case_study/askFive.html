@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Xem tất cả kết quả ở tag console</h2>
+
+    <div>BÀI 1 <br>
+        <button onclick="exerciseOne()">Tạo mảng 2 chiều mới m,n. Tính tổng số chẵn</button>
+    </div>
+    <hr>
+    <div>BÀI 2 <br>
+        <button onclick="exerciseTwo()">Đếm các số nguyên tố có trong mảng 2 chiều</button>
+    </div>
+    <hr>
+
+    <div>BÀI 3 <br>
+        <button onclick="exerciseThree()">Tìm giá trị lớn nhất và nhỏ nhất trong mảng 2 chiều</button>
+    </div>
+
+    <script>
+        function exerciseOne() {
+            let m = parseInt(prompt("Nhập số cột của mảng 2 chiều: "));
+            let arrMine = new Array(m);
+            let sumEven = 0;
+            for (let i=0; i<arrMine.length;i++){
+                let n = parseInt(prompt("Nhập số cột trên dòng thứ "+ i));
+                arrMine[i] = new Array(n);
+                for (let j=0; j<arrMine[i].length;j++){
+                    arrMine[i][j] = parseInt(prompt("Nhập phần tử thứ"+i+j));
+                    if (arrMine[i][j]%2===0){
+                        sumEven += arrMine[i][j];
+                    }
+                }
+            }
+            console.log(arrMine);
+            console.log("Tổng các số chẵn: "+ sumEven);
+        }
+
+        function countIsPrime(num) {
+            let count =0;
+            for (let i=1;i<=Math.sqrt(num);i++){
+                if (num%i===0){
+                    count++;
+                }
+            }
+            if (count===1){
+                return true;
+            }
+        }
+
+        function exerciseTwo() {
+            let a = [
+                [0,1,2,3,4,5],
+                [7,9,11,15,14],
+                [13,17,15,18,19]
+            ];
+            let sum =  "";
+            let count =0;
+            for (let i=0; i<a.length; i++){
+                for (let j=0; j<a[i].length; j++){
+                    if (countIsPrime(a[i][j])){
+                        sum += a[i][j] + "||";
+                        count++;
+                    }
+                }
+            }
+            console.log(a);
+            console.log("Dãy các số nguyên là: "+ sum);
+            console.log("Có "+ count+" số nguyên tố");
+        }
+
+        function exerciseThree() {
+            let a = [
+                [0,1,2,3,4,5],
+                [7,9,11,15,14],
+                [13,17,15,18,19]
+            ];
+            let max = a[0][0];
+            let min = a[0][0];
+            for (let i=0; i<a.length; i++){
+                for (let j=1; j<a[i].length; j++){
+                    if (a[i][j]>max){
+                        max = a[i][j];
+                    } else if (a[i][j]<min){
+                        min = a[i][j];
+                    }
+                    }
+                }
+            console.log(a);
+            console.log("Giá trị lớn nhất: "+ max);
+            console.log("Giá trị nhỏ nhất: "+ min);
+        }
+
+
+    </script>
+</body>
+</html>

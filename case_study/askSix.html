@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Xổ số CodeGym</h1>
+    <div>
+        <input type="number" id="one">
+        <input type="number" id="two">
+        <input type="number" id="three">
+        <input type="number" id="four">
+        <input type="number" id="five">
+        <input type="number" id="six">
+    </div>
+    <br>
+    <br>
+    <button onclick="buyTicket()">Mua vé</button>
+    <button onclick="checkTicket()">Xem kết quả</button>
+    <script>
+        class Ticket{
+            constructor(name) {
+                this.name = name;
+                this.arr= [];
+            }
+            pushNumber(factor){
+                this.arr.push(factor);
+            }
+        }
+        let ticketOne = new Ticket("ticketOne");
+        let ticketFinish = new Ticket("Finish");
+        function random(){
+            return Math.round(Math.random()*99);
+        }
+        for (let i=0; i<6;i++){
+            ticketFinish.pushNumber(random());
+        }
+        console.log(ticketFinish);
+
+        function buyTicket() {
+            let a = parseInt(prompt("Bạn có 2 lựa chọn"+"1.Bạn muốn tự chọn số"+"2. Hệ thống random"));
+            if (a===1){
+                for (let i=0; i<6;i++){
+                    ticketOne.pushNumber(random());
+                }
+                document.getElementById("one").value = ticketOne.arr[0];
+                document.getElementById("two").value = ticketOne.arr[1];
+                document.getElementById("three").value = ticketOne.arr[2];
+                document.getElementById("four").value = ticketOne.arr[3];
+                document.getElementById("five").value = ticketOne.arr[4];
+                document.getElementById("six").value = ticketOne.arr[5];
+            } else {
+                alert("Mời bạn nhập vé viettlot: ")
+            }
+        }
+
+        function checkTicket() {
+            ticketOne.arr[0] = parseInt(document.getElementById("one").value);
+            ticketOne.arr[1] = parseInt(document.getElementById("two").value);
+            ticketOne.arr[2] = parseInt(document.getElementById("three").value);
+            ticketOne.arr[3] = parseInt(document.getElementById("four").value);
+            ticketOne.arr[4] = parseInt(document.getElementById("five").value);
+            ticketOne.arr[5] = parseInt(document.getElementById("six").value);
+            let count =0;
+            for (let i=0;i<6;i++){
+                if (ticketFinish.arr[i]!==ticketOne.arr[i]){
+                    count++;
+                }
+            }
+            switch (count) {
+                case 6:
+                    alert("Giải nhất chúc mừng bạn!!!");
+                    break;
+                case 5:
+                    alert("Giải nhì chúc mừng bạn!!");
+                    break;
+                case 3:
+                     alert("Giải khuyến khích chức mừng bạn!!");
+                     break;
+                default:
+                    alert("Trật nhé, mua lại lần sau!!");
+            }
+        }
+
+    </script>
+</body>
+</html>

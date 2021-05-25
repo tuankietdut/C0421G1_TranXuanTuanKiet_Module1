@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>BÀI 1 <br>
+        <label for="salaryEmployy">Nhập lương của nhân viên (triêu VNĐ)</label>
+        <input type="number" id="salaryEmployy" onchange="exerciseOne()">
+        <p id="result_one">Lương ban đầu</p>
+        <p id="result_two">Lương sau thuế</p>
+    </div>
+    <hr>
+    <div>BÀI 2 <br>
+        <label for="checkLetter">Kiểm tra nguyên âm, phụ âm</label>
+        <input type="text" id="checkLetter" oninput="exerciseTwo()">
+        <p id="resultTwo"></p>
+    </div>
+    <hr>
+
+    <script>
+        function exerciseOne() {
+            let a = parseInt(document.getElementById("salaryEmployy").value);
+            if (a>15){
+                document.getElementById("result_one").innerText = "Tiền thuế:  "+0.2*a +"(triêu VNĐ)";
+                document.getElementById("result_two").innerText= "Lương sau thuế:  "+ 0.8*a + "(triêu VNĐ)";
+            } else if (a>7){
+                document.getElementById("result_one").innerText = "Tiền thuế: "+0.1*a +"(triêu VNĐ)";
+                document.getElementById("result_two").innerText="Lương sau thuế:  "+ 0.9*a +"(triêu VNĐ)";
+            } else {
+                document.getElementById("result_one").innerText = "Tiền thuế: "+0.05*a +"(triêu VNĐ)";
+                document.getElementById("result_two").innerText= "Lương sau thuế:  "+0.95*a +"(triêu VNĐ)";
+            }
+        }
+
+
+        function exerciseTwo() {
+            let a = document.getElementById("checkLetter").value;
+            switch (a) {
+                case "O":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "U":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "I":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "A":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "E":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "o":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "u":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "i":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "a":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                case "e":
+                    document.getElementById("resultTwo").innerText = "Là nguyên âm";
+                    break;
+                default:
+                    document.getElementById("resultTwo").innerText = "Là phụ âm";
+            }
+
+        }
+    </script>
+</body>
+</html>
