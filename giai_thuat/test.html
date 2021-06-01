@@ -6,46 +6,8 @@
 </head>
 <body>
 <script>
-
-    function formingMagicSquare(s) {
-        // Write your code here
-        let arr =[];
-        let sumRow =0;
-        let sumCol =0;
-        let sumLeToRi =0;
-        let sumRiToLe =0;
-        for (let i=0; i<s.length; i++){
-            sumLeToRi += s[i][i];
-            sumRiToLe += s[i][s.length-1-i];
-        }
-        arr.push(sumLeToRi,sumRiToLe);
-        for (let i=0; i<s.length; i++){
-            sumRow=0;
-            sumCol=0;
-            for (let j=0; j<s.length;j++){
-                sumRow += s[i][j];
-                sumCol += s[j][i];
-            }
-            arr.push(sumRow, sumCol);
-        }
-        console.log(arr);
-    }
-
-    let n= [
-        [4,8,2],
-        [4,5,7],
-        [6,1,6]
-    ]
-    // formingMagicSquare(n);
-
-    function whoIAm(nameOne, age, sex) {
-        this.nameOne = nameOne;
-        this.age = age;
-        this.sex = sex;
-    }
-
-    let arr = new whoIAm("Bảo",24,"Male");
-    console.log(arr);
+    let x = 5;
+    console.log(Number.isNaN(x));
 </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arrMine = [];
+        for (let i=0;i<5;i++){
+            let a = parseInt(prompt("Nhập giá trị vào mảng"));
+            arrMine.push(a);
+        }
+        arrMine.sort(function (a,b){
+            return a-b;
+        });
+        /* Code ko cần sử dụng hàm có sẵn
+        let tepm;
+        for (let i=0; i<arrMine.length-1; i++){
+            for (let j=i+1; j<arrMine.length; j++){
+                if (arrMine[j]<arrMine[i]){
+                    tepm = arrMine[i];
+                    arrMine[i] = arrMine[j];
+                    arrMine[j] = tepm;
+                }
+            }
+        }
+        */
+        console.log(arrMine);
+    </script>
+</body>
+</html>

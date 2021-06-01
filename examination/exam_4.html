@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(number, name, dateOfBirth, scoreAverage) {
+                this.number = number;
+                this.name = name;
+                this.dateOfBirth = dateOfBirth;
+                this.scoreAverage = scoreAverage;
+            }
+            getInfo() {
+                document.write("Tên của học sinh: " + this.name + "<br>" +"Số thự tự: " + this.number + "<br>" + "Ngày sinh: " + this.dateOfBirth
+                    + "<br>"  + "Điểm trung bình: " + this.scoreAverage + "<br>") ;
+            }
+            testScore(){
+                let a;
+                if (this.scoreAverage>8){
+                    a = "GIỎI";
+                } else if (this.scoreAverage>=6.5){
+                    a =  "KHÁ";
+                } else if (this.scoreAverage>=5){
+                    a =  "TRUNG BÌNH";
+                } else if (this.scoreAverage>=3.5){
+                    a = "YẾU";
+                } else {
+                    a = "KÉM"
+                }
+                document.write("Điểm trung bình: " + a);
+            }
+        }
+
+        let studentOne = new Student(1,"Nguyen Van A", "10/10/1998", 7);
+        studentOne.getInfo();
+        studentOne.testScore();
+    </script>
+</body>
+</html>

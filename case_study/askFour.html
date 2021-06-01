@@ -33,10 +33,9 @@
             let arrMine = [];
             let a= document.getElementById("letter").value;
             let result = a.split(" ");
+            console.log(result);
             let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            let upperArray = Array.from(upperCase);
             let lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-            let lowerArray = Array.from(lowerCase);
             let index;
             for (let i=0;i<result.length;i++){
                 if (result[i].length>1){
@@ -47,14 +46,14 @@
                 let b = arrMine[i].split("");
                 for (let j=0;j<b.length;j++){
                     if (j===0){
-                        if (lowerArray.indexOf(b[j]) !== -1){
-                            index = lowerArray.indexOf(b[j]);
-                            b[j] = upperArray[index];
+                        if (lowerCase.indexOf(b[j]) !== -1){
+                            index = lowerCase.indexOf(b[j]);
+                            b[j] = upperCase[index];
                         }
                     } else {
-                        if (upperArray.indexOf(b[j]) !==-1){
-                            index = upperArray.indexOf(b[j]);
-                            b[j] = lowerArray[index];
+                        if (upperCase.indexOf(b[j]) !==-1){
+                            index = upperCase.indexOf(b[j]);
+                            b[j] = lowerCase[index];
                     }
                 }
                 arrMine[i] = b.join("");
@@ -71,26 +70,40 @@
             document.getElementById("result").innerHTML = "Kí tự dài nhất trong chuỗi: "+ arrMine[indexMax] + "<br>" + arrMine.join(" ") ;
         }
 
-
+        //
+        // function exerciseTwo() {
+        //     let a = document.getElementById("letterTwo").value;
+        //     let arrMine = Array.from(a);
+        //     let count;
+        //     let num =0;
+        //     let display = ""
+        //     for (let i=0; i<arrMine.length ;i++){
+        //         count = 0;
+        //         for (let j=i+1;j<arrMine.length;j++){
+        //             if (arrMine[i]===arrMine[j]){
+        //                 count++;
+        //             }
+        //         }
+        //         if (count===0){
+        //             display += arrMine[i] + "||";
+        //             num++;
+        //         }
+        //     }
+        //     document.getElementById("resultTwo").innerText = "Có "+ num + " ký tự khác nhau trong chuỗi: " + display;
+        // }
+        //
         function exerciseTwo() {
             let a = document.getElementById("letterTwo").value;
             let arrMine = Array.from(a);
-            let count;
-            let num =0;
-            let display = ""
-            for (let i=0; i<arrMine.length ;i++){
-                count = 0;
-                for (let j=i+1;j<arrMine.length;j++){
-                    if (arrMine[i]===arrMine[j]){
-                        count++;
-                    }
-                }
-                if (count===0){
-                    display += arrMine[i] + "||";
-                    num++;
+            let newArr =[];
+            let count =0;
+            for (let i=0; i<arrMine.length; i++){
+                if (newArr.indexOf(arrMine[i])===-1){
+                    newArr.push(arrMine[i]);
+                    count++;
                 }
             }
-            document.getElementById("resultTwo").innerText = "Có "+ num + " ký tự khác nhau trong chuỗi: " + display;
+            document.getElementById("resultTwo").innerHTML = newArr.join("||") + "Số ký tự khác nhau là: "+ count;
         }
 
         function exerciseThree() {
@@ -98,28 +111,14 @@
             let b= document.getElementById("letterThree_2").value;
             let arrOne = Array.from(a);
             let arrTwo = Array.from(b);
-            let arrThree = [];
-            let count;
-            let display = "";
-            for (let i=0;i<arrOne.length;i++){
-                for (let j=0;j<arrTwo.length;j++){
-                    if (arrOne[i]===arrTwo[j]){
-                        arrThree.push(arrOne[i]);
-                    }
+            let count =0;
+            for (let i=0; i<arrOne.length; i++){
+                if (arrTwo.indexOf(arrOne[i]) !==-1){
+                    count++;
+                    arrTwo.splice(arrTwo.indexOf(arrOne[i]),1);
                 }
             }
-            for (let i=0;i<arrThree.length;i++){
-                count =0;
-                for (let j= i +1; j<arrThree.length;j++){
-                    if (arrThree[i]===arrThree[j]){
-                        count++;
-                    }
-                }
-                if (count===0){
-                    display += arrThree[i] + "||";
-                }
-            }
-            document.getElementById("resultThree").innerText = display;
+            document.getElementById("resultThree").innerText = count;
         }
     </script>
 </body>

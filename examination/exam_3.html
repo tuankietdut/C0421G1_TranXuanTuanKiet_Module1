@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMaxScore(arrScore) {
+        let maxScore = arrScore[0];
+        let index =0;
+        for (let i=1; i<arrScore.length;i++){
+            if (arrScore[i] >= maxScore){
+                maxScore = arrScore[i];
+                index = i;
+            }
+        }
+        return "Điểm cao nhất trong mảng: " + maxScore + " và có vị trí: " + index;
+    }
+    let arrMine = [8,6,2,8,1,1,4];
+    console.log(findMaxScore(arrMine));
+    let arrMineTwo = [2,4,0,5,1];
+    let arrMineThree = [10,5,2,8,-1,6,8];
+    console.log(findMaxScore(arrMineTwo));
+    console.log(findMaxScore(arrMineThree));
+</script>
+</body>
+</html>
